@@ -24,6 +24,20 @@ def best_sum(target_sum, numbers, memo=None):
     memo[target_sum] = shortest_combination
     return memo[target_sum]
 
+def best_sum_tab(target_sum, numbers):
+    dp = [None for i in range(target_sum+1)]
+    dp[0] = []
+
+    for i in range(target_sum+1):
+        if dp[i] != None:
+            for num in numbers:
+                if (i+num <= target_sum):
+                    combination = [*dp[i], num]
+
+                    if (dp[i+num] == None) or (len(combination) < len(dp[i+num])):
+                        dp[i+num] = [*dp[i], num]
+
+    return dp[target_sum]
 
 if __name__ == '__main__':
     print(best_sum(7, [5, 3, 4, 7]))
@@ -32,3 +46,8 @@ if __name__ == '__main__':
     print(best_sum(7, [5, 3, 4, 7]))
     print(best_sum(100, [1, 2, 5, 25]))
 
+    print(best_sum_tab(7, [5, 3, 4, 7]))
+    print(best_sum_tab(8, [2, 3, 5]))
+    print(best_sum_tab(8, [5, 4, 5]))
+    print(best_sum_tab(7, [5, 3, 4, 7]))
+    print(best_sum_tab(100, [1, 2, 5, 25]))

@@ -4,9 +4,9 @@ function fibRec(ind) {
 	return fibRec(ind-1) + fibRec(ind-2)
 }
 
-//memoization with no recursion
-function fibMem(n) {
-	let dp = [...Array(n)]
+// tabulation
+function fibTab(n) {
+	let dp = Array(n)
 	dp[0] = 0
 	dp[1] = 1
 
@@ -29,9 +29,9 @@ console.log(fibRec(6))
 console.log(fibRec(7))
 console.log(fibRec(8))
 
-console.log(fibMem(6))
-console.log(fibMem(7))
-console.log(fibMem(8))
+console.log(fibTab(6))
+console.log(fibTab(7))
+console.log(fibTab(8))
 
 console.log(fibMemoization(6))
 console.log(fibMemoization(7))

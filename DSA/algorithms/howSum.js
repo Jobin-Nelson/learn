@@ -22,8 +22,32 @@ function howSum(targetSum, numbers, memo={}) {
 	return null
 }
 
+// tabulation
+function howSumTab(targetSum, numbers) {
+	let dp = Array(targetSum + 1).fill(null)
+	dp[0] = []
+
+	for (let i=0; i<=targetSum; i++) {
+		if (dp[i]!=null) {
+			for (let num of numbers) {
+				dp[i+num] = [...dp[i], num]
+			}
+		}
+	}
+
+	return dp[targetSum]
+}
+
 console.log(howSum(7, [2,3]))
 console.log(howSum(7, [5, 3, 4, 7]))
 console.log(howSum(7, [2,4]))
 console.log(howSum(8, [2,3,5]))
 console.log(howSum(300, [7, 14]))
+
+console.log()
+
+console.log(howSumTab(7, [2,3]))
+console.log(howSumTab(7, [5, 3, 4, 7]))
+console.log(howSumTab(7, [2,4]))
+console.log(howSumTab(8, [2,3,5]))
+console.log(howSumTab(300, [7, 14]))

@@ -23,9 +23,30 @@ def how_sum(target_sum, numbers, memo=None):
     memo[target_sum] = None
     return None
 
+# tabulation
+def how_sum_tab(target_sum, numbers):
+    dp = [None for i in range(target_sum+1)]
+    dp[0] = []
+
+    for i in range(target_sum+1):
+        if dp[i]!=None:
+            for num in numbers:
+                if ((i+num)<=target_sum):
+                    dp[i+num] = [*dp[i], num]
+
+    return dp[target_sum]
+
 if __name__ == '__main__':
     print(how_sum(7, [2, 3]))
     print(how_sum(7, [5, 3, 4, 7]))
     print(how_sum(7, [2, 4]))
     print(how_sum(8, [2, 3, 5]))
     print(how_sum(7, [2, 3]))
+
+    print()
+
+    print(how_sum_tab(7, [2, 3]))
+    print(how_sum_tab(7, [5, 3, 4, 7]))
+    print(how_sum_tab(7, [2, 4]))
+    print(how_sum_tab(8, [2, 3, 5]))
+    print(how_sum_tab(7, [2, 3]))
