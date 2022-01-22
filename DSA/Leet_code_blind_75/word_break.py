@@ -1,13 +1,18 @@
 class Solution:
-    def word_break(s: str, word_dict: List[str]) -> bool:
+    def word_break(self, s: str, word_dict: List[str]) -> bool:
         dp = [False] * (len(s) + 1)
         dp[len(s)] = True
 
+        for i in range(len(s)-1, -1, -1):
+            for word in word_dict:
+                if (i+len(word) <= len(s)) and (str[i:i+len(word)]==word):
+                    dp[i] = dp[i+len(word)]
+                if dp[i]:
+                    break
 
+        return dp[0]
 
-
-
-    def word_break_memo(s, word_dict, memo=None):
+    def word_break_memo(self, s, word_dict, memo=None):
         if memo == None:
             memo = dict()
 
