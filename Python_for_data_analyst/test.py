@@ -1,7 +1,7 @@
-class human:
-    def __init__(self, name, occupation):
-        self.name = name
-        self.occupation = occupation
+def solution(number):
+    threes = (number-1)//3
+    fives = (number-1)//5
+    fifteens = (number-1)//15
+    return 3*threes*(threes+1)/2 + 5*fives*(fives+1)/2 - 15*fifteens*(fifteens+1)/2
+    
 
-    def speak(self):
-        print(f"Hey I'm {self.name}. What's your name?")

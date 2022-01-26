@@ -22,6 +22,27 @@ function allConstruct(target, wordBank, memo={}) {
 	return result
 }
 
+// tabulation
+function allConstructTab(target, wordBank) {
+	let dp = Array(target.length +1).fill().map(() => [])
+	dp[0] = [[]]
+
+	for (let i=0; i<=target.length; i++) {
+		for (let word of wordBank) {
+			if (target.slice(i, i+word.length) === word) {
+				let combination = dp[i].map(subArray => [...subArray, word])
+				dp[i + word.length].push(...combination)
+			}
+		}
+	}
+
+	return dp[target.length]
+}
+
 console.log(allConstruct('purple', ['purp', 'p', 'purpl', 'le', 'ur', 'e']))
 console.log(allConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef', 'c']))
 console.log(allConstruct('aaaaaaaaaaaaaaaaaaaaaaaaaz', ['a', 'aaa', 'aa', 'aaa', 'aaaa',]))
+
+console.log(allConstructTab('purple', ['purp', 'p', 'purpl', 'le', 'ur', 'e']))
+console.log(allConstructTab('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd', 'ef', 'c']))
+console.log(allConstructTab('skateboard', ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']))
