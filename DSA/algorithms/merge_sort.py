@@ -10,12 +10,12 @@ def merge_sort(list):
     if len(list) <= 1:
         return list
 
-    l, r = split(list)
+    l, r = split(list) # recurses till it returns a single element
 
     l = merge_sort(l)
     r = merge_sort(r)
 
-    return merge(l, r)
+    return merge(l, r) # merges the two lists (l, r) while sorting them 
 
 def split(list):
     '''
