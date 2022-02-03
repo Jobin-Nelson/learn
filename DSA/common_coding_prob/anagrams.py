@@ -19,7 +19,7 @@ def are_anagrams(s1, s2):
             freq2[ch] += 1
         else:
             freq2[ch] = 1
-    return freq1 ==freq2
+    return freq1 == freq2
 
 # second way
 from collections import Counter
