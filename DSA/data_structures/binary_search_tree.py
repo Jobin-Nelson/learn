@@ -86,7 +86,29 @@ class binary_search_tree:
         right_sum = self.right.find_sum() if self.right else 0
         return left_sum + right_sum + self.data
 
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.right
+            
+            min_val = self.right.find_min()
+            self.data = min_val
+            self.right = self.right.delete(min_val)
+
+        return self
+
 def build_tree(arr):
+    print('Building a tree with elements: ', arr)
     root = binary_search_tree(arr[0])
 
     for i in range(1, len(arr)):
@@ -103,3 +125,5 @@ if __name__ == '__main__':
     print('In order traversal: ', tree.in_order_traversal())
     print('Pre order traversal: ',tree.pre_order_traversal())
     print('Post order traversal: ',tree.post_order_traversal())
+    tree.delete(20)
+    print('Deleted 20, in order traversal: ', tree.in_order_traversal())

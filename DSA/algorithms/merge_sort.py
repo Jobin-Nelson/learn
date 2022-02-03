@@ -1,4 +1,4 @@
-def merge_sort(list):
+def merge_sort(arr):
     '''
     Sorts a list in ascending order
     Returns a new sorted list
@@ -7,57 +7,36 @@ def merge_sort(list):
     Conquer: Recursively sort the sublists created in previous step
     Combine: Merge the sorted sublists created in previous step
     ''' 
-    if len(list) <= 1:
-        return list
+    if len(arr) > 1:
+        m = len(arr) // 2
+        l, r = arr[:m], arr[m:]
 
-    l, r = split(list) # recurses till it returns a single element
+        merge_sort(l) # recurses till it hits a single element
+        merge_sort(r)
 
-    l = merge_sort(l)
-    r = merge_sort(r)
+        i, j, k = 0, 0, 0
 
-    return merge(l, r) # merges the two lists (l, r) while sorting them 
+        while i < len(l) and j < len(r): # merges the two lists (l, r) while sorting them 
+            if l[i] < r[j]:
+                arr[k] = l[i]
+                i += 1
+            else:
+                arr[k] = r[j]
+                j += 1
+            k += 1
 
-def split(list):
-    '''
-    Divide the unsorted list at midpoint into sublists
-    Returns two sublists - l and r
-    '''
-    m = len(list)//2
-
-    l, r = list[:m], list[m:]
-
-    return l, r
-
-def merge(l, r):
-    '''
-    Merges two lists, sorting them in the process
-    Returns a new merged list
-    '''
-    ls = []
-    i = 0
-    j = 0
-    
-    while i<len(l) and j<len(r):
-        if l[i] < r[j]:
-            ls.append(l[i])
+        while i < len(l):
+            arr[k] = l[i]
             i += 1
-        else:
-            ls.append(r[j])
+            k += 1
+
+        while j < len(r):
+            arr[k] = r[j]
             j += 1
-
-    while i < len(l):
-        ls.append(l[i])
-        i += 1
-
-    while j < len(r):
-        ls.append(r[j])
-        j += 1
-
-    return ls
+            k += 1
 
 if __name__ == '__main__':
-    alist = [43, 23, 54, 68, 72, 88, 91]
-
-    sorted_list = merge_sort(alist)
-
-    print(sorted_list)
+    arr = [3, 5, 2, 7, 4, 7, 6, ]
+    print(arr)
+    merge_sort(arr)
+    print(arr)
