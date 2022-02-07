@@ -21,7 +21,7 @@ def functional_model():
     model = tensorflow.keras.Model(inputs = my_input, outputs = x)
     return model
 
-# tensorflow.keras.Model: inehrit from a base class
+# tensorflow.keras.Model: inherit from a base class
 class MyCustomModel(tensorflow.keras.Model):
     def __init__(self):
         super().__init__()

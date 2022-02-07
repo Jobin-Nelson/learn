@@ -31,6 +31,7 @@ In some instances we would need to run a session to be able to exectute parts of
 A tensor is a generalization of vectors and matrices to potentially higher dimensions. Internally, TensorFlow represents tensors as n-dimensional arrays of base datatypes.
 
 # Computer Vision
+
 It is the process of training a computer to do operation like image classification, or image segmentation on image datasets
 
 - The nerual networks that are best at this task is called convolutional neural network CNN for short
@@ -42,3 +43,11 @@ The goal of the network during training is to learn two things:
 - which class goes with what features (head).
 
 Using a pretrained base model with an untrained head is called *transfer learning*
+
+## Conv2D
+
+It is the convolution layer in the base which extracts the features of the image through filtering, detecting and condensing the input
+- Filter: This is achieved by kernels which maps the values of the input to the new layer after elementwise multiplication with kernels, essentially filtering out particular features
+- Detect: This is achieved by some activation function like relu(rectified linear unit), tanh(similar to sigmoid), sigmoid etc
+- Condense: This is achieved by maxpool layer which does the same thing as kernels except with the max values of the input neglecting unimportant values
+- Sliding window: All the steps above is performed with a window that slides across the input values, they could be further modified through setting padding to 'same' or 'valid' to deal with boundary values
