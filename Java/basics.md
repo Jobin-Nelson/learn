@@ -43,3 +43,9 @@ arithmatic, comparison, logical, bitwise, etc
 - **HashMap**: has key value pairs, much like dictionaries in python
 - **Hashtree**: like hashmap but sorted
 - **LinkedHashmap**: stores the values as linked list
+
+### Abstract class
+The whole point of abstraction is to hide information and show limited info. It is useful when multiple lines of code are being shared by other classes. Does not support multiple inheritance
+
+### Interfaces class
+interfaces defines the specification of how a class would behave. It only contains constants, method declaration, default methods, static methods and nested types. Used when there is no lines of code being shared across classes but still has some relation among classes. It also supports multiple inheritance
