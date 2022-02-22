@@ -6,10 +6,13 @@ Notes:
 - instantiate the numbers in the dp list and increment with num iteratively throughout dp
 '''
 def combination_sum_memo(nums, target):
-    dp = [-1] * (target+1)
-    dp[0] = 1
-    if dp[target] > -1:
+    dp = [0] * (target+1)
+    if dp[target] > 0:
         return dp[target]
+    if target == 0:
+        return 1
+    if target < 0:
+        return 0
     res = 0
     for n in nums:
         if n <= target:
@@ -20,10 +23,7 @@ def combination_sum_memo(nums, target):
 
 def combination_sum(nums, target):
     dp = [0] * (target+1)
-
-    for n in nums:
-        if n <= target:
-            dp[n] = 1
+    dp[0] = 1
 
     for i in range(target+1):
         for n in nums:
@@ -34,5 +34,5 @@ def combination_sum(nums, target):
 if __name__ == '__main__':
     nums1, target1 = [1, 2, 3], 4
     nums2, target2 = [9], 3
-    print(combination_sum(nums1, target1))
-    print(combination_sum(nums2, target2))
+    print(combination_sum_memo(nums1, target1))
+    print(combination_sum_memo(nums2, target2))

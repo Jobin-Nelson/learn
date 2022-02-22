@@ -4,7 +4,7 @@ the only constraint stopping you from robbing each of them is that adjacent hous
 Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
 Link: https://leetcode.com/problems/house-robber/
 Notes:
-- we have to track only two variables r1, r2 and the decision on robbing the next house depends of the max if r1+1, r2
+- we have to track only two variables r1, r2 and the decision on robbing the next house depends of the max if r1+n, r2
 '''
 def rob(nums):
     r1, r2 = 0, 0

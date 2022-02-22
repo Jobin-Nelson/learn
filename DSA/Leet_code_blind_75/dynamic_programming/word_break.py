@@ -6,7 +6,7 @@ Notes:
 - bottom up approach keep track of bool value from the last element up to the first element
 '''
 # memoization
-def word_break_memo(self, s, word_dict, memo=None):
+def word_break_memo(s, word_dict, memo=None):
     if memo == None:
         memo = dict()
 
@@ -18,7 +18,7 @@ def word_break_memo(self, s, word_dict, memo=None):
     
     for word in word_dict:
         if s.startswith(word):
-            if self.word_break_memo(s[len(word):], word_dict, memo):
+            if word_break_memo(s[len(word):], word_dict, memo):
                 memo[s] = True
                 return True
 

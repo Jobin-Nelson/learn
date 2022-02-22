@@ -5,7 +5,7 @@ Notes:
 - breaking the whole problem into subproblems and incrementing 1 when the condition is satisfied from the bottom (last element) to top (first element)
 '''
 # 2D matrix dynamic programming
-def long_com_subseq(self, text1: str, text2: str) -> int:
+def long_com_subseq(text1: str, text2: str) -> int:
     dp = [[0 for j in range(len(text2)+1)] for i in range(len(text1)+1)]
 
     for i in range(len(text1) -1, -1, -1):
@@ -21,6 +21,8 @@ if __name__ == '__main__':
     t11, t12 = 'abcde', 'ace'
     t21, t22 = 'abc', 'abc'
     t31, t32 = 'abc', 'def'
+    t41, t42 = 'ezupkr', 'ubmrapg'
     print(long_com_subseq(t11, t12))
     print(long_com_subseq(t21, t22))
     print(long_com_subseq(t31, t32))
+    print(long_com_subseq(t41, t42))
