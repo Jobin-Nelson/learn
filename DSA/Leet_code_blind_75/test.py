@@ -1,20 +1,16 @@
-def word_break(s, word_dict):
-    dp = [False] * (len(s) + 1)
-    dp[len(s)] = True
+def two_sum(nums, target):
+    hashmap = {}
 
-    i = len(s)
-    while i >= 0:
-        for w in word_dict:
-            if i+len(w) <= len(s) and s[i: i+len(w)] == w:
-                dp[i] = dp[i+len(w)]
-            if dp[i]:
-                break
-        i -= 1
-    return dp[0]
+    for i, n in enumerate(nums):
+        complement = target - n
+        if complement in hashmap:
+            return [i, hashmap[complement]]
+        hashmap[n] = i
+
 if __name__ == '__main__':
-    s1, w1  = 'leetcode', ['leet', 'code']
-    s2, w2 = 'applepenapple', ['apple', 'pen']
-    s3, w3 = 'catsandog', ['cats', 'dog', 'sand', 'and', 'cat']
-    print(word_break(s1, w1))
-    print(word_break(s2, w2))
-    print(word_break(s3, w3))
+    nums1 = [2, 7, 11, 15]
+    target1 = 9
+    nums2 = [3, 2, 4]
+    target2 = 6
+    print(two_sum(nums1, target1))
+    print(two_sum(nums2, target2))

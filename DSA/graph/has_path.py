@@ -26,5 +26,6 @@ graph = {
 	'k': []
 }
 
-print(has_path_depth(graph, 'f', 'k'))
-print(has_path_breadth(graph, 'f', 'k'))
+if __name__ == '__main__':
+    print(has_path_depth(graph, 'f', 'k'))
+    print(has_path_breadth(graph, 'f', 'k'))

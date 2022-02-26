@@ -10,7 +10,7 @@ def maxProduct(nums):
     cur_min, cur_max = 1, 1
 
     for n in nums:
-        if n == 0:        # this is not necessary since it would automatically reset to the current number
+        if n == 0:       
             cur_min, cur_max = 1, 1
             continue
         tmp = cur_max * n

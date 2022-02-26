@@ -4,24 +4,9 @@ Link: https://leetcode.com/problems/product-of-array-except-self/
 Notes:
 - create prefix and postfix products of each elements in the array, then combine them by multiplying
 '''
-
-def product_except_self(nums):
-    length = len(nums)
-    pre, post = [1] * length, [1] * length
-
-    for i in range(length):
-        if i > 0:
-            pre[i] = pre[i-1] * nums[i-1]
-            post[length-1-i] = post[length-i] * nums[length-i]
-    i = 0
-    while i < length:
-        pre[i] *= post[i]
-        i += 1
-    return pre
-
 # pre and post 
 def product_array(nums: list[int])->int:
-    res = []*len(nums)
+    res = [1]*len(nums)
     prefix = 1
     for i in range(len(nums)):
         res[i] = prefix
@@ -35,5 +20,5 @@ def product_array(nums: list[int])->int:
 if __name__ == '__main__':
     nums1 = [1, 2, 3, 4]
     nums2 = [-1, 1, 0 , -3, 3]
-    print(product_except_self(nums1))
-    print(product_except_self(nums2))
+    print(product_array(nums1))
+    print(product_array(nums2))
