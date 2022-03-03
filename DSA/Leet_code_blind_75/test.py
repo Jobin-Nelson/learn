@@ -1,16 +1,17 @@
-def two_sum(nums, target):
-    hashmap = {}
+def max_area(nums):
+    area = 0
+    l, r = 0, len(nums) -1 
+    while l < r:
+        cur_area = (r - l) * min(nums[l], nums[r])
+        area = max(area, cur_area)
 
-    for i, n in enumerate(nums):
-        complement = target - n
-        if complement in hashmap:
-            return [i, hashmap[complement]]
-        hashmap[n] = i
-
+        if nums[l] < nums[r]:
+            l += 1
+        else:
+            r -= 1
+    return area
 if __name__ == '__main__':
-    nums1 = [2, 7, 11, 15]
-    target1 = 9
-    nums2 = [3, 2, 4]
-    target2 = 6
-    print(two_sum(nums1, target1))
-    print(two_sum(nums2, target2))
+    height1 = [1, 1]
+    height2 = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+    print(max_area(height1))
+    print(max_area(height2))

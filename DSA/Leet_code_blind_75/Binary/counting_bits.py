@@ -6,7 +6,7 @@ Notes:
 '''
 # offset to find the number of 1's in the number
 class Solution:
-    def count_bits(self, n: int)->List[int]:
+    def count_bits(self, n: int)->list[int]:
         dp = [0]*(n+1)
         offset = 1
 

@@ -10,9 +10,9 @@ class Node(object):
         self.neighbors = neighbors if neighbors is not None else []
 
 Link: https://leetcode.com/problems/clone-graph/
-Notes:
+Notes: 
+- memoization 
 '''
-
 class Solution:
     def clone_graph(self, node: 'Node') -> 'Node':
         old_new = {}
@@ -23,6 +23,7 @@ class Solution:
 
             copy = Node(node.val)
             old_new[node] = copy
+
             for neighbor in node.neighbors:
                 copy.neighbors.append(clone(neighbor))
             return copy
