@@ -39,6 +39,7 @@ def word_break(s, word_dict):
         i -= 1
     return dp[0]
 
+
 if __name__ == '__main__':
     s1, w1  = 'leetcode', ['leet', 'code']
     s2, w2 = 'applepenapple', ['apple', 'pen']
