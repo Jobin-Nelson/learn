@@ -1,0 +1,9 @@
+import pathlib
+
+cur_file = pathlib.Path(__file__)
+cur_dir = pathlib.Path.cwd()
+parent = pathlib.Path.cwd().parent
+
+print(cur_file)
+print(cur_dir)
+print(parent)

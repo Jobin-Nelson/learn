@@ -18,8 +18,8 @@ def turbo_sort(input_str):
                 # reset with the largest character on the next index
                 i += 1
                 index = find_largest(ls[i:], i)
-        else:  # for the zeroth index
-            index = find_largest(ls, 0)
+        else:  
+            index = find_largest(ls, 0)  # for the zeroth index
 
         ls[i], ls[index] = ls[index], ls[i]
         i += 1
