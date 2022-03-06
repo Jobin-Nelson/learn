@@ -1,8 +1,13 @@
+SQL/
+
+##############################
+## Python
+##############################
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 */__pycache__/*
-deep_learning\Models
-SQL/
+*/.scrapy
+*/deep_learning/Models/
 
 ##############################
 ## Java
