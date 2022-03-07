@@ -11,7 +11,6 @@
 - [x] [3Sum](https://leetcode.com/problems/3sum/)
 - [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
----
 
 # Binary
 
@@ -21,7 +20,6 @@
 - [x] [Missing Number](https://leetcode.com/problems/missing-number/)
 - [x] [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 
----
 
 # Dynamic Programming
 
@@ -37,7 +35,6 @@
 - [x] [Unique Paths](https://leetcode.com/problems/unique-paths/)
 - [x] [Jump Game](https://leetcode.com/problems/jump-game/)
 
----
 
 # Graph
 
@@ -50,7 +47,6 @@
 - [ ] [Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
 - [ ] [Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
----
 
 # Interval
 
@@ -60,7 +56,6 @@
 - [ ] [Meeting Rooms (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms/)
 - [ ] [Meeting Rooms II (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms-ii/)
 
----
 
 # Linked List
 
@@ -71,7 +66,6 @@
 - [ ] [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 - [ ] [Reorder List](https://leetcode.com/problems/reorder-list/)
 
----
 
 # Matrix
 
@@ -80,7 +74,6 @@
 - [ ] [Rotate Image](https://leetcode.com/problems/rotate-image/)
 - [ ] [Word Search](https://leetcode.com/problems/word-search/)
 
----
 
 # String
 
@@ -95,7 +88,6 @@
 - [ ] [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
 - [ ] [Encode and Decode Strings (Leetcode Premium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
----
 
 # Tree
 
@@ -114,7 +106,6 @@
 - [ ] [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
 - [ ] [Word Search II](https://leetcode.com/problems/word-search-ii/)
 
----
 
 # Heap
 
