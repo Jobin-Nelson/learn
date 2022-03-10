@@ -2,7 +2,7 @@
 Qn: An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 Link: https://leetcode.com/problems/number-of-islands/
 Notes: 
-- bfs without queue since we need to only return a bool value increment if true
+- dfs without queue since we need to only return a bool value increment if true
 '''
 def num_islands(grid):
     count = 0
