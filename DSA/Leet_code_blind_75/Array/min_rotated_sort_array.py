@@ -12,7 +12,7 @@ def find_min(nums):
         m = (r + l) // 2
         if m > 0 and (nums[m] < nums[m-1]):
             return nums[m]
-        if nums[l] <= nums[m] and nums[m] > nums[r]:
+        if nums[m] > nums[r]:
             l = m + 1
         else: 
             r = m - 1
