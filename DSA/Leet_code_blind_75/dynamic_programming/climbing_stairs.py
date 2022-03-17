@@ -3,18 +3,18 @@ Qn: You are climbing a staircase. It takes n steps to reach the top.
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 Link: https://leetcode.com/problems/climbing-stairs/submissions/
 Notes:
-- fibonnaci with n+1 steps by tracking only two variables
+- fibonnaci with n steps by tracking only two variables
 '''
 
 def climb_stairs(n):
-    one, two = 1, 1
+    one, two = 0, 1
     i = 0
-    while i < n-1:
-        temp = one
-        one += two
-        two = temp
+    while i < n:
+        tmp = one + two
+        one = two
+        two = tmp
         i += 1
-    return one
+    return two
 
 if __name__ == '__main__':
     n1, n2 = 2, 3
