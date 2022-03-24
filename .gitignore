@@ -8,6 +8,8 @@ SQL/
 */__pycache__/*
 */.scrapy
 */deep_learning/Models/
+*.pyc
+*$py.class
 
 ##############################
 ## Java
@@ -51,3 +53,7 @@ SQL/
 */.vscode/
 */.code-workspace
 
+##############################
+## Automation
+##############################
+automation_scripts/creds.py
