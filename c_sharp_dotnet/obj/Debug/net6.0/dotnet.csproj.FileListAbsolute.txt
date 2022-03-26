@@ -1,0 +1,15 @@
+C:\Users\Jobin\Ds\Self_learning\dotnet\bin\Debug\net6.0\dotnet.exe
+C:\Users\Jobin\Ds\Self_learning\dotnet\bin\Debug\net6.0\dotnet.deps.json
+C:\Users\Jobin\Ds\Self_learning\dotnet\bin\Debug\net6.0\dotnet.runtimeconfig.json
+C:\Users\Jobin\Ds\Self_learning\dotnet\bin\Debug\net6.0\dotnet.dll
+C:\Users\Jobin\Ds\Self_learning\dotnet\bin\Debug\net6.0\dotnet.pdb
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.csproj.AssemblyReference.cache
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.AssemblyInfoInputs.cache
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.AssemblyInfo.cs
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.csproj.CoreCompileInputs.cache
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.dll
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\refint\dotnet.dll
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.pdb
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\dotnet.genruntimeconfig.cache
+C:\Users\Jobin\Ds\Self_learning\dotnet\obj\Debug\net6.0\ref\dotnet.dll
