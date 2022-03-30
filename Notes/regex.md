@@ -5,14 +5,14 @@
 - `verbatim text`
 	- verbatim text is matched literally
 - `.`
-	- single character wildcard
+	- Any one character
 - `\`
 	- escape character
 	- most cases, treat the character after it as a literal character `\.` is `.`
 - `^` and `$`
 	- anchors
-	- `^` matches the beginning of the string
-	- `$` matches the end of the string
+	- `^` matches the beginning of the line
+	- `$` matches the end of the line
 - `*`, `+`, `?`
 	- `*` matches 0 to many of the previous character
 	- `+` matches 1 to many of the previous character
@@ -24,6 +24,12 @@
 	- `[abc]` matches a single character that is either `a`, `b` or `c`
 	- `[a-z]` matches any character between a...z inclusively
 - `|`
-	- exclusive or, match one thing or the other
+	- or, match one thing or the other
 - `(abc)`
 	- groups common characters
+- `\s`,`\S`
+	- `\s` any whitespace character
+	- `\S` any non-whitespace character
+
+- Examples
+	- `https\?://\S*\.[A-Za-z]\+\S` 
