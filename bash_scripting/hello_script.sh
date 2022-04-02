@@ -1,13 +1,11 @@
 #!/usr/bin/bash
 
-if [ -z $1 ]; then
-	read -p "Give me a file name: " file
+cat "/etc/shadow"
+
+if [ "$?" -eq 0 ] ; then
+	echo "command succeeded"
+	exit 0
+else
+	echo "Command failed"
+	exit 1
 fi
-
-for file in $@; do
-	if [ -f $file ]; then
-		echo "It is a regular file"
-	fi
-done
-
-ls -l 

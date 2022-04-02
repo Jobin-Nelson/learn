@@ -32,4 +32,4 @@
 	- `\S` any non-whitespace character
 
 - Examples
-	- `https\?://\S*\.[A-Za-z]\+\S` 
+	- `https\?://\S*\.[A-Za-z]\+\S` -> for extracting only web links from corpus
