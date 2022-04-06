@@ -3,6 +3,7 @@ Qn: Given the roots of two binary trees root and subroot
 return true if there is a subtree of root with the same structure and node values of subroot and false otherwise
 Link: https://leetcode.com/problems/subtree-of-another-tree/
 Notes:
+- have to check same tree at each node
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

@@ -32,7 +32,7 @@ int main(){
 
 	// assignment operators
 	int a = 20; // = is an assignment operator
-	a++ // increments a by 1
+	a++; // increments a by 1
 
 	// comparison operators ==, !=, <, >, <=, >=
 	int a = 10, b = 20;

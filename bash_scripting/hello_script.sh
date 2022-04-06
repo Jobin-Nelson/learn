@@ -1,11 +1,10 @@
 #!/usr/bin/bash
 
-cat "/etc/shadow"
+function file_count() {
+	local count=$(find $1 -maxdepth 1 -type f | wc -l)
+	echo "${1}: ${count}"
+}
 
-if [ "$?" -eq 0 ] ; then
-	echo "command succeeded"
-	exit 0
-else
-	echo "Command failed"
-	exit 1
-fi
+file_count ~/Ds
+file_count ~/dotfiles
+file_count ~/Ds/Self_learning
