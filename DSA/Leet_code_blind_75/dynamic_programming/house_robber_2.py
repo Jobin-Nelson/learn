@@ -9,7 +9,7 @@ Notes:
 
 '''
 def rob(nums):
-    return max(helper(nums[:-1]), helper(nums[1:]))
+    return max(helper(nums[:-1]), helper(nums[1:])) if len(nums) > 1 else nums[0]
 
 def helper(nums):
     r1, r2 = 0, 0
