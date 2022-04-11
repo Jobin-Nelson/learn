@@ -1,12 +1,25 @@
-def get_combination(s, word_bank):
-    dp = [None for i in range(len(s)+1)]
-    dp[0] = [[]]
+def merge(list):
+    m = len(list) // 2
+    l, r = list[:m], list[m:]
+    merge(l)
+    merge(r)
 
-    for i in range(len(s)):
-        if dp[i]:
-            for word in word_bank:
-                word_len = len(word)
-                if s[i:i+word_len] == word:
-                    combination = list(map(lambda x: [*x, word], dp[i]))
-                    dp[i+word_len].extend(combination) 
-    return dp[len(s)+1]
+    i, j, k = 0, 0, 0
+    while i < len(l) and j < len(r):
+        if l[i] < r[j]:
+            list[k] = l[i]
+            i += 1
+        else:
+            list[k] = r[j]
+            j += 1
+        k += 1
+    
+    while i < len(l):
+        list[k] = l[i]
+        i += 1
+        k += 1
+
+    while j < len(r):
+        list[k] = r[j]
+        j += 1
+        k += 1

@@ -21,7 +21,7 @@ def print_linked_list(head):
 def print_linked_list_rec(head):
     if head == None:
         return 
-    print(head.val)
+    print(head.val, end='->')
     print_linked_list_rec(head.next)
 
 if __name__ == '__main__':
