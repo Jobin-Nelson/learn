@@ -23,7 +23,7 @@ class Solution:
         dfs(root)
         return root
 
-def list_tree_rec(root: TreeNode) -> list:
+def list_tree(root: TreeNode) -> list:
     if root == None: return []
     queue = [root]
     res = []
@@ -46,6 +46,6 @@ if __name__ == '__main__':
     g = TreeNode(1, a, e)
     h = TreeNode(6, c, f)
     r = TreeNode(4, g, h)
-    print(list_tree_rec(r))
+    print(list_tree(r))
     sol = Solution()
-    print(list_tree_rec(sol.convertBST(r)))
+    print(list_tree(sol.convertBST(r)))
