@@ -23,3 +23,4 @@ def merge(list):
         list[k] = r[j]
         j += 1
         k += 1
+
