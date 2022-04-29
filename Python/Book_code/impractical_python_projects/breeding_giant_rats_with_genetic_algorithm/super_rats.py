@@ -24,7 +24,7 @@ def populate(num_rats, min_wt, max_wt, mode_wt):
     return [int(random.triangular(min_wt, max_wt, mode_wt)) for _ in range(num_rats)]
 
 def fitness(population, goal):
-    '''Measure population fintess based on an attribute mean vs target'''
+    '''Measure population fitness based on an attribute mean vs target'''
     ave = statistics.mean(population)
     return ave / goal
 

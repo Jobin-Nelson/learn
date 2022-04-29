@@ -5,14 +5,14 @@ bash_scripting/shell-scripting-course
 ##############################
 ## Python
 ##############################
-*/.ipynb_checkpoints/
-*/.pytest_cache/
-*/__pycache__/
-*/venv/
-*/.scrapy
+**/.ipynb_checkpoints/
+**/.pytest_cache/
+**/__pycache__/
+**/venv/
+**/.scrapy
 */deep_learning/Models/
-*.pyc
-*$py.class
+**.pyc
+**$py.class
 
 ##############################
 ## Java
