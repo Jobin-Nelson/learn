@@ -5,6 +5,6 @@ function file_count() {
 	echo "${1}: ${count}"
 }
 
-file_count ~/Ds
+file_count ~/playground
 file_count ~/dotfiles
-file_count ~/Ds/Self_learning
+file_count ~/playground/learn
