@@ -11,8 +11,6 @@ fi
 res=$(curl -s "https://piratebayorg.net/api.php?url=/q.php?q=${query}&cat=200")
 tracker="tr=udp%3A%2F%2F185.193.125.139%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.0x.tf%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce"
 
-
-
 if [ $tries -le $(echo $res | jq '.? | length') ]; then
 	for (( i=0; i<tries; i++)); do
 		name=$(echo  $res | jq -r ".[$i].name")

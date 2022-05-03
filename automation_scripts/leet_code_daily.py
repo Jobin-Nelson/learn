@@ -1,14 +1,14 @@
 '''This program sets up everything for the daily leetcode problem'''
 from pathlib import Path
-import os, webbrowser, argparse
+import subprocess, webbrowser, argparse
 from typing import Sequence, Optional
 from requests_html import HTMLSession
 
-def main(argv: Optional[Sequence[str]]=None) -> int:
+def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="find today's leetcode problem")
     parser.add_argument('-f', '--file', action='store_true', help='create a file if not existing')
     parser.add_argument('-c', '--vscode', action='store_true', help='open file in vscode')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     # api request to get the daily question link
     base_url = 'https://leetcode.com'
@@ -20,9 +20,14 @@ def main(argv: Optional[Sequence[str]]=None) -> int:
 
     s = HTMLSession()
     r = s.post(query_url, json=query)
-    response = r.json()
-    daily_qn_link = base_url + response['data']['activeDailyCodingChallengeQuestion']['link']
-    webbrowser.open(daily_qn_link)
+    if r.ok:
+        response = r.json()
+        daily_qn_link = base_url + response['data']['activeDailyCodingChallengeQuestion']['link']
+        webbrowser.open(daily_qn_link)
+    else:
+        print(f'Received response {r.status_code}')
+        print('Aborting program!')
+        return 1
 
     # creating and populating the file if it's not created already
     if args.file:
@@ -37,8 +42,8 @@ def main(argv: Optional[Sequence[str]]=None) -> int:
 
     # opening the file in vscode
     if args.vscode:
-        vs_code_path = rf'..\DSA\competitive_programming\{filename}' 
-        os.system(f'code {vs_code_path}')
+        vs_code_path = r'C:\Users\jobin\AppData\Local\Programs\Microsoft VS Code\bin\code.CMD'
+        subprocess.run([vs_code_path, str(p)])
     return 0
 
 if __name__ == '__main__':
