@@ -5,7 +5,8 @@ def main():
     with sync_playwright() as p:
         print('Launching browser...')
         browser = p.chromium.launch()
-        page = browser.new_page()
+        context = browser.new_context()
+        page = context.new_page()
         page.goto('https://app.joinsuperset.com/#/s/jobprofiles')
         page.fill('//*[@id="email"]', email)
         page.fill('//*[@id="password"]', password)
@@ -14,6 +15,7 @@ def main():
         print('Parsing page...\n')
         result = page.locator('//*[@id="app-ui-view"]/div/div/div[2]/div/div[4]/div/div/table/tbody/tr/td[7]/div/div/span[1]/strong').text_content()
         print(f'Cognizant PAT status: {result}\n')
+        context.close()
         browser.close()
 
 if __name__ == '__main__':

@@ -26,7 +26,7 @@ def load_haiku(filename):
 def cmudict_missing(word_set):
     '''Find and return words in word set missing from cmudict'''
     exceptions = set()
-    for word in word_set():
+    for word in word_set:
         word = word.lower().strip(punctuation)
         if word.endswith("'s") or word.endswith("’s"):
             word = word[:-2]
