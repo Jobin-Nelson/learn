@@ -42,8 +42,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     # opening the file in vscode
     if args.vscode:
-        vs_code_path = r'C:\Users\jobin\AppData\Local\Programs\Microsoft VS Code\bin\code.CMD'
-        subprocess.run([vs_code_path, str(p)])
+        subprocess.run(['code', str(p)])
     return 0
 
 if __name__ == '__main__':
