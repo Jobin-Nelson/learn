@@ -3,6 +3,7 @@ from pathlib import Path
 import subprocess, webbrowser, argparse
 from typing import Sequence, Optional
 from requests_html import HTMLSession
+from datetime import datetime
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="find today's leetcode problem")
@@ -32,13 +33,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # creating and populating the file if it's not created already
     if args.file:
         filename = Path(daily_qn_link).name + '.py'
-        p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / filename
+        p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / datetime.now().strftime('%B').lower()
+        if not p.exists(): p.mkdir()
+        p /= filename
         if p.exists():
             print('File already exists')
         else:
             with open(p, 'w') as f:
                 print(f'Creating file {filename} at {p}')
-                f.write(f"'''\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\n")
+                f.write(f"'''\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
 
     # opening the file in vscode
     if args.vscode:

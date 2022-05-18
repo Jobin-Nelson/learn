@@ -8,19 +8,30 @@ Qn: You are given a network of n nodes, labeled from 1 to n. You are also given 
     If it is impossible for all the n nodes to receive the signal, return -1.
 Link: https://leetcode.com/problems/network-delay-time/
 Notes:
+- use djikstra's algorithm (min heap) to get the shortest time to every node 
 '''
 from collections import defaultdict
+import heapq
+
 def networkDelayTime(times: list[list[int]], n: int, k: int) -> int:
     graph = defaultdict(list)
+
     for source, target, time in times:
         graph[source].append((target, time))
-        graph[target].append((source, time))
 
-    delay = -1
-    if len(graph[k]) != n-1: return delay
-    for target, time in graph[k]:
+    min_heap = [(0, k)]
+    visited = set()
+    delay = 0
+    while min_heap:
+        time, target = heapq.heappop(min_heap)
+        if target in visited:
+            continue
+        visited.add(target)
         delay = max(delay, time)
-    return delay
+        for nei_target, nei_time in graph[target]:
+            if nei_target not in visited:
+                heapq.heappush(min_heap, (nei_time + time, nei_target))
+    return delay if len(visited) == n else -1
 
 if __name__ == '__main__':
     t1, n1, k1 = [[2,1,1],[2,3,1],[3,4,1]], 4, 2

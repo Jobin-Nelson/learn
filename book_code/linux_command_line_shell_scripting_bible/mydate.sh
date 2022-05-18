@@ -12,3 +12,5 @@ secondsInDay=$[24*60*60]
 days=$[$dif / $secondsInDay]
 
 echo "The difference between $date2 and $date1 is $days days"
+echo "This is being run by $(basename $0) script"
+exit

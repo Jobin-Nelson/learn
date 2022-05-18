@@ -1,7 +1,7 @@
 '''
 Qn: Return the minimum cost to make all points connected. 
-All points are connected if there is exactly one simple path between any two points.
-Link: https://leetcode.com/problems/min-cost-to-connect-all-points/
+    All points are connected if there is exactly one simple path between any two points.
+    Link: https://leetcode.com/problems/min-cost-to-connect-all-points/
 Notes:
 - build graph with cost and nodes
 - use prims algorithm, min heap to pop the mininum cost node at each iteration
