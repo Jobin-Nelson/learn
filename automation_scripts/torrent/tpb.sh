@@ -6,8 +6,6 @@ else
 	query=$1
 fi
 
-cacheDir=$HOME/.cache/tpb
-mkdir -p $cacheDir
 query=$(sed 's/ /%20/g' <<<$query)
 
 info_hash=$(curl -s "https://piratebayorg.net/api.php?url=/q.php?q=${query}&cat=200" |
@@ -24,7 +22,7 @@ echo $magnet | xclip -sel c
 
 if [[ $ans == 'y' ]]; then
 	notify-send "Downloading file"
-	aria2c -d $HOME/Videos $magnet
+	aria2c -d "$HOME/Videos" "$magnet"
 else
 	echo "Magnet link copied to clipboard"
 fi
