@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 '''This program sets up everything for the daily leetcode problem'''
 from pathlib import Path
+import requests
 import subprocess, webbrowser, argparse
 from typing import Sequence, Optional
-from requests_html import HTMLSession
 from datetime import datetime
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
@@ -19,8 +20,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
       "operationName": "questionOfToday"
     }
 
-    s = HTMLSession()
-    r = s.post(query_url, json=query)
+    r = requests.post(query_url, json=query)
     if r.ok:
         response = r.json()
         daily_qn_link = base_url + response['data']['activeDailyCodingChallengeQuestion']['link']
@@ -33,7 +33,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # creating and populating the file if it's not created already
     if args.file:
         filename = Path(daily_qn_link).name + '.py'
-        p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / datetime.now().strftime('%B').lower()
+        today = datetime.now()
+        p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / today.strftime('%B').lower()
         if not p.exists(): p.mkdir()
         p /= filename
         if p.exists():
@@ -41,7 +42,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         else:
             with open(p, 'w') as f:
                 print(f'Creating file {filename} at {p}')
-                f.write(f"'''\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
+                f.write(f"'''\nCreated Date: {today.strftime('%d-%m-%Y')}\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
 
     # opening the file in vscode
     if args.vscode:
