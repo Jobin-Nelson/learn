@@ -31,13 +31,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         print('Aborting program!')
         return 1
 
+    filename = Path(daily_qn_link).name + '.py'
+    today = datetime.now()
+    p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / today.strftime('%B').lower()
+    p.mkdir(exist_ok=True)
+    p /= filename
+
     # creating and populating the file if it's not created already
     if args.file:
-        filename = Path(daily_qn_link).name + '.py'
-        today = datetime.now()
-        p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / today.strftime('%B').lower()
-        p.mkdir(exist_ok=True)
-        p /= filename
         if p.exists():
             print('File already exists')
         else:

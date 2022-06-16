@@ -10,12 +10,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument('-l', '--lang', 
             help='specify the language you want the cheatsheet for [default: %(default)s]', 
             default='python')
-    parser.add_argument('query', help='get cheatsheet on the query string')
+    parser.add_argument('query', nargs='+', help='get cheatsheet on the query string')
     args = parser.parse_args(argv)
 
-    cht_url = 'https://cht.sh'
+    base_url = 'https://cht.sh'
+    cht_url = f"{base_url}/{args.lang}/{'+'.join(args.query)}"
+    print('Requested url:', cht_url)
 
-    r = requests.get(f'{cht_url}/{args.lang}/{args.query}')
+    r = requests.get(cht_url)
     if r.ok:
         print(r.text)
     else: 
