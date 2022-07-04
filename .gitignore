@@ -1,4 +1,5 @@
 SQL/
+**.env
 */*.vs
 bash_scripting/shell-scripting-course
 

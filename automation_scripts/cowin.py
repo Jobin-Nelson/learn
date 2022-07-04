@@ -1,8 +1,16 @@
 from playwright.sync_api import Playwright, sync_playwright
-from creds import phone_number
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+PHONE_NUMBER = os.getenv('PHONE_NUMBER')
 
 def run(playwright: Playwright) -> None:
+    if not PHONE_NUMBER:
+        print('PHONE_NUMBER is not in environment variables')
+        print('Please check .env')
+        return 
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
@@ -10,7 +18,7 @@ def run(playwright: Playwright) -> None:
     page.goto("https://selfregistration.cowin.gov.in/")
 
     page.click("[placeholder=\"Enter\\ your\\ mobile\\ number\"]")
-    page.fill("[placeholder=\"Enter\\ your\\ mobile\\ number\"]", phone_number)
+    page.fill("[placeholder=\"Enter\\ your\\ mobile\\ number\"]", PHONE_NUMBER)
     page.click("[aria-label=\"GET\\ OTP\"]")
 
     OTP = input("Please provide your OTP: ")
