@@ -4,6 +4,15 @@ SQL/
 bash_scripting/shell-scripting-course
 
 ##############################
+## Rust
+##############################
+**/debug/
+**/target/
+**/Cargo.lock
+**/*.rs.bk
+**/*.pdb
+
+##############################
 ## Python
 ##############################
 **/.ipynb_checkpoints/
