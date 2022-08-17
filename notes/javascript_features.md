@@ -24,7 +24,7 @@ promise.then(value => console.log(value)).catch(error => console.log(error))
 - But does not have resolve or reject callbacks
 ```Javascript
 async function loadFile() {if (fileLoaded) return 'File Loaded'}
-loadFile().the(value => console.log(value)).catch(error => console.log(error))
+loadFile().then(value => console.log(value)).catch(error => console.log(error))
 ```
 # Await
 - Makes an async function wait for a promise
