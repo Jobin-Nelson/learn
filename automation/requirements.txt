@@ -1,3 +1,5 @@
-playwright
 python-dotenv
-requests
+httpx
+aiofiles
+todoist-api-python
+
