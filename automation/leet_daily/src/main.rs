@@ -18,11 +18,11 @@ async fn main() -> Result<(), reqwest::Error> {
 
     let file_path = create_file_path(&daily_qn_link);
 
-    if args.file {
+    if !args.file {
         create_file(&file_path, &current_date, &daily_qn_link);
     }
 
-    if args.vim {
+    if !args.vim {
         open_file_in_vim(&file_path);
     }
 
