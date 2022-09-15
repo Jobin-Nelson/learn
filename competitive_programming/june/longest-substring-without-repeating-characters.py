@@ -4,7 +4,7 @@ Qn: Given a string , find the length of the longest substring without repeating
     characters
 Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 Notes:
-- using sliding window, slide when there is a duplicate
+    - using sliding window, slide when there is a duplicate
 '''
 def lengthOflongestSubstring(s: str) -> int:
     visited = set()

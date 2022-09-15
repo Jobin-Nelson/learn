@@ -3,8 +3,8 @@ Qn: Given a collection of numbers, nums, that might contain duplicates,
     return all possible unique permutations in any order
 Link: https://leetcode.com/problems/permutations-ii/
 Notes:
-- easy with itertools permutations
-- backtracking with two lists to track perm and total res
+    - easy with itertools permutations
+    - backtracking with two lists to track perm and total res
 '''
 from itertools import permutations
 

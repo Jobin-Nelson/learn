@@ -5,8 +5,8 @@ Qn: Given an integer array nums, you need to find one continuous subarray
     Return the shortest such subarray and output its length.
 Link: https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
 Notes:
-- track min and max once inside the unsorted subarray
-- find the index where min and max go
+    - track min and max once inside the unsorted subarray
+    - find the index where min and max go
 '''
 def find_unsorted_subarray(nums: list[int]) -> int:
     mn, mx = float('inf'), float('-inf')

@@ -3,7 +3,7 @@ Qn: Given the root of a binary search tree, and an integer k,
 return the kth smallest value (1-indexed) of all the values of the nodes in the tree.
 Link: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 Notes:
-- use stack to get access to parent nodes while decrementing k and return the value when k hits zero
+    - use stack to get access to parent nodes while decrementing k and return the value when k hits zero
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

@@ -7,8 +7,8 @@ Qn: Given an integer n, return true if it is a power of four. Otherwise, return
     n == 4x.
 Link: https://leetcode.com/problems/power-of-four/
 Notes:
-- 4^2 = 16
-- log4(16) = 2
+    - 4^2 = 16
+    - log4(16) = 2
 '''
 import math
 

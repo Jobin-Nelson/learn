@@ -4,7 +4,7 @@ Qn: Given m x n integeres matrix, return the length of the longest increasing pa
     You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
 Link: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 Notes:
-- dfs with caching 
+    - dfs with caching 
 '''
 def longestIncreasingPath(matrix: list[list[int]]) -> int:
     R, C = len(matrix), len(matrix[0])

@@ -3,7 +3,7 @@ Qn: Given an integer n, return the number of strings of length n
     that consist only of vowels (a, e, i, o, u) and are lexicographically sorted.
 Link: https://leetcode.com/problems/count-sorted-vowel-strings/
 Notes:
-- recursively add values till n hits zero
+    - recursively add values till n hits zero
 '''
 def countVowelStrings(n: int) -> int:
     def rec(n, k):

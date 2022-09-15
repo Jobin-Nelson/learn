@@ -10,8 +10,8 @@ Qn: You are given an array of words where each word consists of lowercase Englis
     given list of words.
 Link: https://leetcode.com/problems/longest-string-chain/
 Notes:
-- recursion & memoization
-- check by removing each character from the word
+    - recursion & memoization
+    - check by removing each character from the word
 '''
 def longestStrChain(words: list[str]) -> int:
     s = set(words)

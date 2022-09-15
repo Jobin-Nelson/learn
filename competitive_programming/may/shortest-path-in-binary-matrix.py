@@ -9,7 +9,7 @@ Qn: Given an n x n binary matrix grid,
         (i.e., they are different and they share an edge or a corner)
 Link: https://leetcode.com/problems/shortest-path-in-binary-matrix/
 Notes:
-- use bfs to find the shortest path
+    - use bfs to find the shortest path
 '''
 from collections import deque
 

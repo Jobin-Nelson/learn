@@ -5,7 +5,7 @@ Qn: Find all valid combinations of k numbers that sum up to n
     Each number is used at most once.
 Link: https://leetcode.com/problems/combination-sum-iii/
 Notes:
-- recursively find the values
+    - recursively find the values
 '''
 def combinationSum(k: int, n: int) -> list[list[int]]:
     res = []

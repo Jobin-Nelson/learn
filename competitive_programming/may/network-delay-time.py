@@ -8,7 +8,7 @@ Qn: You are given a network of n nodes, labeled from 1 to n. You are also given 
     If it is impossible for all the n nodes to receive the signal, return -1.
 Link: https://leetcode.com/problems/network-delay-time/
 Notes:
-- use djikstra's algorithm (min heap) to get the shortest time to every node 
+    - use djikstra's algorithm (min heap) to get the shortest time to every node 
 '''
 from collections import defaultdict
 import heapq

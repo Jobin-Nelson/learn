@@ -11,7 +11,7 @@ Qn: You are given a rectangular cake of size h x w and two arrays of integers
     the answer can be a large number, return this modulo 10^9 + 7.
 Link: https://leetcode.com/problems/maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts/
 Notes:
-- sort find the max difference between the cuts including the boundaries
+    - sort find the max difference between the cuts including the boundaries
 '''
 def maxArea(h: int, w: int, horizontalCuts: list[int], verticalCuts: list[int]) -> int:
     horizontalCuts.sort()

@@ -6,8 +6,8 @@ Qn: Given a triangle array, return the minimum path sum from top to bottom.
     to either index i or index i + 1 on the next row.
 Link: https://leetcode.com/problems/triangle/
 Notes:
-- Can use recursion or Iteration
-- Bottom up approach
+    - Can use recursion or Iteration
+    - Bottom up approach
 '''
 def minimumTotal(triangle: list[list[int]]) -> int:
     # Recursion method

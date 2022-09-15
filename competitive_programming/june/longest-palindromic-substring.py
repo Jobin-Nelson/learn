@@ -3,7 +3,7 @@ Created Date: 16-06-2022
 Qn: Given a string s, return the longest palindromic substring in s
 Link: https://leetcode.com/problems/longest-palindromic-substring/
 Notes:
-- recursive check for both odd and even length palindrome
+    - recursive check for both odd and even length palindrome
 '''
 def longestPalindrome(s: str) -> str:
     N = len(s)

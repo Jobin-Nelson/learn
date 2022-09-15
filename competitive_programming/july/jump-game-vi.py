@@ -13,7 +13,7 @@ Qn: You are given a 0-indexed integer array nums and an integer k.
     Return the maximum score you can get
 Link: https://leetcode.com/problems/jump-game-vi/
 Notes:
-- use heap to keep track of the score and drop when the index falls outside k range
+    - use heap to keep track of the score and drop when the index falls outside k range
 '''
 import heapq
 

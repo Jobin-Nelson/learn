@@ -4,7 +4,7 @@ Qn: Given a binary search tree (BST), find the lowest common ancestor (LCA)
     node of two given nodes in the BST.
 Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 Notes:
-- leverage the nature of BST (left values are smaller and right values are bigger)
+    - leverage the nature of BST (left values are smaller and right values are bigger)
 '''
 from collections import deque
 

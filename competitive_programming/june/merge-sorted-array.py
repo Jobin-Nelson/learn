@@ -9,8 +9,8 @@ Qn: You are given two integer arrays nums1 and nums2, sorted in non-decreasing o
     last n elements are set to 0 and should be ignored. nums2 has a length of n.
 Link: https://leetcode.com/problems/merge-sorted-array/
 Notes:
-- iterate from last to first and merge the larger value
-- merge the leftover nums2 as well 
+    - iterate from last to first and merge the larger value
+    - merge the leftover nums2 as well 
 '''
 def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
     last = m + n - 1

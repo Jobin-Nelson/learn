@@ -10,8 +10,8 @@ Qn: A valid encoding of an array of words is any reference string s and array of
     possible of any valid encoding of words.
 Link: https://leetcode.com/problems/short-encoding-of-words/
 Notes:
-- use set to eliminate suffix words and return length of reference string
-- use suffix trie and track the length of each word in trie return the sum of length
+    - use set to eliminate suffix words and return length of reference string
+    - use suffix trie and track the length of each word in trie return the sum of length
 '''
 class TrieNode:
     def __init__(self):

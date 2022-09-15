@@ -6,7 +6,7 @@ Qn: Given a binary tree root, a node X in the tree is named good if in the path
     Return the number of good nodes in the binary tree.
 Link: https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 Notes:
-- dfs and track the good nodes
+    - dfs and track the good nodes
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

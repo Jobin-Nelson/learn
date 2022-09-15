@@ -5,7 +5,7 @@ Qn: Given a 2D matrix matrix, handle multiple queries of the following type:
         by its upper left corner (row1, col1) and lower right corner (row2, col2).
 Link: https://leetcode.com/problems/range-sum-query-2d-immutable/
 Notes:
-- store prefix sum and subtract the non-overlapping sums
+    - store prefix sum and subtract the non-overlapping sums
 '''
 class NumMatrix:
     def __init__(self, matrix: list[list[int]]):

@@ -9,7 +9,7 @@ Qn: You are given an array target of n integers. From a starting array arr
     return false.
 Link: https://leetcode.com/problems/construct-target-array-with-multiple-sums/
 Notes:
-- use heap to pop off max values and reduce from total
+    - use heap to pop off max values and reduce from total
 '''
 import heapq
 

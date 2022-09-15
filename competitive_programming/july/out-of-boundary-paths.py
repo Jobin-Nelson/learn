@@ -10,7 +10,7 @@ Qn: There is an m x n grid with a ball. The ball is initially at the position
     can be very large, return it modulo 10^9 + 7.
 Link: https://leetcode.com/problems/out-of-boundary-paths/
 Notes:
-- Recursion and memoization
+    - Recursion and memoization
 '''
 def findPaths(m: int, n: int, maxMove: int, startRow: int, startColumn: int) -> int:
     memo = {}

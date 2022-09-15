@@ -8,7 +8,7 @@ Qn: Given the root of a binary tree, construct a string consisting of
     relationship between the string and the original binary tree.
 Link: https://leetcode.com/problems/construct-string-from-binary-tree/
 Notes:
-- dfs and slice to return
+    - dfs and slice to return
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

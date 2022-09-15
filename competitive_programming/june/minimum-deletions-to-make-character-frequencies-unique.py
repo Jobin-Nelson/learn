@@ -8,7 +8,7 @@ Qn: A string s is called good if there are no two different characters in s that
     frequency of 'b' is 1.
 Link: https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/
 Notes:
-- increment everytime the we have same frequency character
+    - increment everytime the we have same frequency character
 '''
 from collections import Counter
 

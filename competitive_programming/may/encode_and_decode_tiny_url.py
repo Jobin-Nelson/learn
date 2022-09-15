@@ -4,7 +4,7 @@ https://leetcode.com/problems/design-tinyurl and it returns a short URL
 such as http://tinyurl.com/4e9iAk. Design a class to encode a URL and decode a tiny URL.
 Link:https://leetcode.com/problems/encode-and-decode-tinyurl/
 Notes:
-- use two hashmaps to store and retrive long & short urls
+    - use two hashmaps to store and retrive long & short urls
 '''
 class Codec:
     def __init__(self):

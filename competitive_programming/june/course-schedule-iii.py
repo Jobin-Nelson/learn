@@ -9,8 +9,8 @@ Qn: There are n different online courses numbered from 1 to n.
     Return the maximum number of courses that you can take.
 Link: https://leetcode.com/problems/course-schedule-iii/
 Notes:
-- use heap to track the biggest duration and pop when max time exceeds end time
-- return the length of heap
+    - use heap to track the biggest duration and pop when max time exceeds end time
+    - return the length of heap
 '''
 import heapq
 

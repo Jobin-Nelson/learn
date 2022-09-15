@@ -2,7 +2,7 @@
 Qn: Design a HashSet without using any built-in hash table libraries.
 Link: https://leetcode.com/problems/design-hashset/
 Notes:
-- use list to store keys, use nested loops to save space
+    - use list to store keys, use nested loops to save space
 '''
 class MyHashSet:
     def __init__(self):

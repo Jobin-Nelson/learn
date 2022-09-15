@@ -9,7 +9,7 @@ Qn: You are given an array of strings products and a string searchWord.
 searchWord is typed.
 Link: https://leetcode.com/problems/search-suggestions-system/
 Notes:
-- once sorted use two pointers to return the answer
+    - once sorted use two pointers to return the answer
 '''
 def suggestedProducts(products: list[str], searchWord: str) -> list[list[str]]:
     res = []

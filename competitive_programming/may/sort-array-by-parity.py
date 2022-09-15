@@ -3,8 +3,8 @@ Qn: Given an integer array nums, move all the even integers at the beginning
     of the array followed by all the odd integers.
 Link: https://leetcode.com/problems/sort-array-by-parity/
 Notes:
-- use two lists to track even and odd, return concatenated list
-- use two pointers and swap from first to last
+    - use two lists to track even and odd, return concatenated list
+    - use two pointers and swap from first to last
 '''
 def sort_array_by_parity(nums: list[list[int]]) -> list[int]:
     even, odd = [], []

@@ -3,8 +3,8 @@ Qn: An underground railway system is keeping track of customer travel times betw
 They are using this data to calculate the average time it takes to travel from one station to another.
 Link: https://leetcode.com/problems/design-underground-system/
 Notes:
-- use two hashmaps
-- think only about the output
+    - use two hashmaps
+    - think only about the output
 '''
 from collections import defaultdict
 

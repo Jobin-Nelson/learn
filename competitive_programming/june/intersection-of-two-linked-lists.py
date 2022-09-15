@@ -5,9 +5,9 @@ Qn: Given the heads of two singly linked-lists headA and headB,
     If the two linked lists have no intersection at all, return null.
 Link: https://leetcode.com/problems/intersection-of-two-linked-lists/
 Notes:
-- Traverse through the linked lists once list ends 
-- Begin from the other lists beginning
-- They should coincide at an intersection or none at the end of lists
+    - Traverse through the linked lists once list ends 
+    - Begin from the other lists beginning
+    - They should coincide at an intersection or none at the end of lists
 '''
 from typing import Optional
 

@@ -5,7 +5,7 @@ Qn: You are given an integer array nums and an integer k.
     Return the maximum number of operations you can perform on the array.
 Link: https://leetcode.com/problems/max-number-of-k-sum-pairs/
 Notes:
-- modded two sum 
+    - modded two sum 
 '''
 def max_operations(nums: list[int], k: int) -> int:
     hashmap = dict()

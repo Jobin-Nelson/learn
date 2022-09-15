@@ -6,8 +6,8 @@ Qn: You are given an integer array cost where cost[i] is the cost of ith step on
     the minimum cost to reach the top of the floor.
 Link: https://leetcode.com/problems/min-cost-climbing-stairs/
 Notes:
-- append a zero to last to signify the reaching the top
-- iterate backwards to find the min cost to reach the top
+    - append a zero to last to signify the reaching the top
+    - iterate backwards to find the min cost to reach the top
 '''
 def minCostClimbingStairs(cost: list[int]) -> int:
     cost.append(0)

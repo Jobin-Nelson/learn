@@ -6,7 +6,7 @@ Qn: Given the root of a binary tree, return the same tree where every subtree
     A subtree of a node node is node plus every node that is a descendant of node.
 Link: https://leetcode.com/problems/binary-tree-pruning/
 Notes:
-- dfs and prune nodes that doesn't have or descendant's having 1
+    - dfs and prune nodes that doesn't have or descendant's having 1
 '''
 from collections import deque
 

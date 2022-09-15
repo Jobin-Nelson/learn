@@ -4,8 +4,8 @@ Qn: Populate each next pointer to point to its next right node.
     Initially, all next pointers are set to NULL.
 Link: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 Notes:
-- use level order traversal to link each node to the next one
-- can be done using only constant space
+    - use level order traversal to link each node to the next one
+    - can be done using only constant space
 '''
 from __future__ import annotations
 from collections import deque

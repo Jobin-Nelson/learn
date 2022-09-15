@@ -5,8 +5,8 @@ Qn: You are given a string s consisting only of letters 'a' and 'b'.
     Return the minimum number of steps to make the given string empty.
 Link: https://leetcode.com/problems/remove-palindromic-subsequences/
 Notes:
-- since there are only two characters and it doesn't have to be contiguous
-- we just need to account for three cases
+    - since there are only two characters and it doesn't have to be contiguous
+    - we just need to account for three cases
 '''
 def removePalindromeSub(s: str) -> int:
     if not s: return 0

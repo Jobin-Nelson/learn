@@ -6,7 +6,7 @@ Qn: Given an n-ary tree, return the level order traversal of its nodes' values.
     each group of children is separated by the null value (See examples).
 Link: https://leetcode.com/problems/n-ary-tree-level-order-traversal/
 Notes:
-- double ended queue for obtaining the node level wise
+    - double ended queue for obtaining the node level wise
 '''
 from collections import deque
 

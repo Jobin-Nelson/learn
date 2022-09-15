@@ -7,7 +7,7 @@ Qn: A decimal number is called deci-binary if each of its digits is either
     minimum number of positive deci-binary numbers needed so that they sum up to n.
 Link: https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
 Notes:
-- Answer is always the maximum digit in the number
+    - Answer is always the maximum digit in the number
 '''
 def minPartitions(n: str) -> int:
     return max(int(c) for c in n)

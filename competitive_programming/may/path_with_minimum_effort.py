@@ -2,8 +2,8 @@
 Qn: Return the minimum effort required to travel from the top-left cell to the bottom-right cell.
 Link: https://leetcode.com/problems/path-with-minimum-effort/
 Notes:
-- try different values from 0 to max of heights
-- binary searh your way down to the smallest value that completes the path
+    - try different values from 0 to max of heights
+    - binary searh your way down to the smallest value that completes the path
 '''
 def minimum_effort_path(heights: list[list[int]]) -> int:
     rows, cols = len(heights), len(heights[0])

@@ -10,8 +10,8 @@ Qn: You are given an array of people, people, which are the attributes of some
     the front of the queue).
 Link: https://leetcode.com/problems/queue-reconstruction-by-height/
 Notes:
-- sort the list
-- track the people ahead and insert the values to a new list
+    - sort the list
+    - track the people ahead and insert the values to a new list
 '''
 def reconstructQueue(people: list[list[int]]) -> list[list[int]]:
     N = len(people)

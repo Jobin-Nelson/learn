@@ -4,7 +4,7 @@ Qn: Given an integer num, return the number of steps to reduce it to zero.
     otherwise, you have to subtract 1 from it.
 Link: https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 Notes:
-- iterate and divide by 2 when even subtract 1 when odd
+    - iterate and divide by 2 when even subtract 1 when odd
 '''
 def numberOfSteps(num: int) -> int:
     #res = 0

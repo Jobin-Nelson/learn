@@ -8,7 +8,7 @@ Qn: Given a 1-indexed array of integers numbers that is already sorted in
     of length 2.
 Link: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 Notes:
-- two pointer one at each end, move end when sum is larger and vice versa
+    - two pointer one at each end, move end when sum is larger and vice versa
 '''
 def twoSum(numbers: list[int], target: int) -> list[int]:
     l, r = 0, len(numbers) - 1

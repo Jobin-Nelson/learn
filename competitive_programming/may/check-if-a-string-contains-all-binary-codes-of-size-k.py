@@ -3,7 +3,7 @@ Qn: Given a binary string s and an integer k, return true if every
     binary code of length k is a substring of s. Otherwise, return false.
 Link: https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
 Notes:
-- take all the unique substring of s with length k and return if it is equal to 2**k
+    - take all the unique substring of s with length k and return if it is equal to 2**k
 '''
 def hasAllCodes(s: str, k: int) -> bool:
     code_set = set()

@@ -4,9 +4,9 @@ Qn: An obstacle and space are marked as 1 or 0 respectively in grid.
     Return the number of possible unique paths that the robot can take to reach the bottom-right corner.
 Link: https://leetcode.com/problems/unique-paths-ii/
 Notes:
-- mark every first row and col that is not blocked as one
-- iteratively count the sum of previous row and col 
-- return the value of the last cell
+    - mark every first row and col that is not blocked as one
+    - iteratively count the sum of previous row and col 
+    - return the value of the last cell
 '''
 def uniquePathsWithObstacles(obstacleGrid: list[list[int]]) -> int:
     R, C = len(obstacleGrid), len(obstacleGrid[0])

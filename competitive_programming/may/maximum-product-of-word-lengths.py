@@ -4,7 +4,7 @@ Qn: Given a string array words, return the maximum value of
     If no such two words exist, return 0.
 Link: https://leetcode.com/problems/maximum-product-of-word-lengths/
 Notes:
-- detect no common letters using set.isdisjoint() method
+    - detect no common letters using set.isdisjoint() method
 '''
 def maxProduct(words: list[str]) -> int:
     lookup = { word: set(word) for word in words }

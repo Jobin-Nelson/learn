@@ -5,7 +5,7 @@ Qn: The n-queens puzzle is the problem of placing n queens on an n x n
     Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 Link: https://leetcode.com/problems/n-queens-ii/
 Notes:
-- backtracking
+    - backtracking
 '''
 def totalNQueens(n: int) -> int:
     res = 0

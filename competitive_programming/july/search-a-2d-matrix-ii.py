@@ -6,7 +6,7 @@ Qn: Write an efficient algorithm that searches for a value target in an m x n
     - Integers in each column are sorted in ascending from top to bottom.
 Link: https://leetcode.com/problems/search-a-2d-matrix-ii/
 Notes:
-- check values from left bottom [m][0] 
+    - check values from left bottom [m][0] 
 '''
 def searchMatrix(matrix: list[list[int]], target: int) -> bool:
     m, n = len(matrix), len(matrix[0])

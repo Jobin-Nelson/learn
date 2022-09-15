@@ -2,7 +2,7 @@
 Qn: Find the node in the BST that the node's value equals val and return the subtree rooted with that node. If such a node does not exist, return null
 Link: https://leetcode.com/problems/search-in-a-binary-search-tree/
 Notes:
-- recurse till you find the value or hit the end of the tree and return the node
+    - recurse till you find the value or hit the end of the tree and return the node
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

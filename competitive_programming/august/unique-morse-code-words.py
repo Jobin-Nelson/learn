@@ -10,7 +10,7 @@ Qn: Given an array of strings words where each word can be written as a
     Return the number of different transformations among all words we have.
 Link: https://leetcode.com/problems/unique-morse-code-words/
 Notes:
-- hashset to collect only unique morse code
+    - hashset to collect only unique morse code
 '''
 def uniqueMorseRepresentations(words: list[str]) -> int:
     morse_code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]

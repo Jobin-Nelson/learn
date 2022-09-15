@@ -8,10 +8,10 @@ Qn: There are n servers numbered from 0 to n - 1 connected by
     Return all critical connections in the network in any order.
 Link: https://leetcode.com/problems/critical-connections-in-a-network/
 Notes:
-- Tarjan's algorithm
-- track two attributes lowtime and discovery
-- update lowtime for all strongly connected nodes to have the same min values
-- update output when low[next] > dis[cur]
+    - Tarjan's algorithm
+    - track two attributes lowtime and discovery
+    - update lowtime for all strongly connected nodes to have the same min values
+    - update output when low[next] > dis[cur]
 '''
 from collections import defaultdict
 

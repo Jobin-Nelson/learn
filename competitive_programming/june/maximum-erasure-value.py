@@ -6,7 +6,7 @@ Qn: You are given an array of positive integers nums and want to erase
     Return the maximum score you can get by erasing exactly one subarray.
 Link: https://leetcode.com/problems/maximum-erasure-value/
 Notes:
-- two pointer, sliding window solution & two variables to track max sum
+    - two pointer, sliding window solution & two variables to track max sum
 '''
 def maximumUniqueSubarray(nums: list[int]) -> int:
     res = cur_sum = l = r = 0

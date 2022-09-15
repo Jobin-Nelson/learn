@@ -13,7 +13,7 @@ Qn: You are given an integer array heights representing the heights of buildings
     ladders and bricks optimally.
 Link: https://leetcode.com/problems/furthest-building-you-can-reach/
 Notes:
-- heap to track minimum height to use bricks on use ladders on everything else
+    - heap to track minimum height to use bricks on use ladders on everything else
 '''
 from heapq import heappush, heappop
 

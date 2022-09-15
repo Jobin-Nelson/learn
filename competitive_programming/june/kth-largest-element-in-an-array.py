@@ -5,8 +5,8 @@ Qn: Given an integer array nums and an integer k, return the kth largest
     sorted order, not the kth distinct element.
 Link: https://leetcode.com/problems/kth-largest-element-in-an-array/
 Notes:
-- sort and return len - kth, time complexity O(nlogn)
-- quickselect for average time complexity of O(n), worst case O(n^2)
+    - sort and return len - kth, time complexity O(nlogn)
+    - quickselect for average time complexity of O(n), worst case O(n^2)
 '''
 def findKthLargest(nums: list[int], k: int) -> int:
     # return sorted(nums)[-k]

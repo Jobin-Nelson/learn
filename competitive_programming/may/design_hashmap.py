@@ -2,7 +2,7 @@
 Qn: Design a HashMap without using any built-in hash table libraries.
 Link: https://leetcode.com/problems/design-hashmap/
 Notes: 
-- use list to store 10^6 elements
+    - use list to store 10^6 elements
 '''
 class HashMap:
     def __init__(self):

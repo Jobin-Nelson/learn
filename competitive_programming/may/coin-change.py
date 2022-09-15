@@ -6,7 +6,7 @@ Qn: You are given an integer array coins representing coins of different
     You may assume that you have an infinite number of each kind of coin.
 Link: https://leetcode.com/problems/coin-change/
 Notes:
-- dynamic programming qn find sum of coins from 0->amount by caching previous values
+    - dynamic programming qn find sum of coins from 0->amount by caching previous values
 '''
 def coinChange(coins: list[int], amount: int) -> int:
     dp = [amount+1] * (amount+1)

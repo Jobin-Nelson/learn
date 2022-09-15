@@ -6,7 +6,7 @@ Qn: The n-queens puzzle is the problem of placing n queens on an n x n
     You may return the answer in any order.
 Link: https://leetcode.com/problems/n-queens/
 Notes:
-- backtrack avoiding queens in same in row, col & diagonals
+    - backtrack avoiding queens in same in row, col & diagonals
 '''
 from pprint import pprint
 def solveQueens(n: int) -> list[list[int]]:

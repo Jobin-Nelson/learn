@@ -2,7 +2,7 @@
 Qn: Return the answers to all queries. If a single answer cannot be determined, return -1.0.
 Link: https://leetcode.com/problems/evaluate-division/
 Notes:
-- graph problem use adjacency list with dict as values
+    - graph problem use adjacency list with dict as values
 '''
 def calcEquation(equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
     # creating adjacency list

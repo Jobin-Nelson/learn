@@ -5,7 +5,7 @@ Qn: Given two strings word1 and word2, return the minimum number of steps
     In one step, you can delete exactly one character in either string.
 Link: https://leetcode.com/problems/delete-operation-for-two-strings/
 Notes:
--   w o r d 1
+    -   w o r d 1
       s e a
 w   0 1 2 3
 o e 1 2 1 2 

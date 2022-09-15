@@ -5,7 +5,7 @@ Qn: Given the root of a binary tree, return the average value of the nodes on
     will be accepted.
 Link: https://leetcode.com/problems/average-of-levels-in-binary-tree/
 Notes:
-- level order traversal and get average at each level
+    - level order traversal and get average at each level
 '''
 from collections import deque
 

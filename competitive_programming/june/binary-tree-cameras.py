@@ -6,7 +6,7 @@ Qn: You are given the root of a binary tree. We install cameras on the tree node
     Return the minimum number of cameras needed to monitor all nodes of the tree.
 Link: https://leetcode.com/problems/binary-tree-cameras/
 Notes:
-- track two variables at each node till get the whole tree covered/monitored
+    - track two variables at each node till get the whole tree covered/monitored
 '''
 from __future__ import annotations
 from typing import Optional

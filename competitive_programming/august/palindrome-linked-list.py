@@ -3,7 +3,7 @@ Created Date: 2022-08-23
 Qn: Given the head of a singly linked list, return true if it is a palindrome.
 Link: https://leetcode.com/problems/palindrome-linked-list/
 Notes:
-- Two pointer (fast, slow), and reverse one half of the list
+    - Two pointer (fast, slow), and reverse one half of the list
 '''
 from __future__ import annotations
 

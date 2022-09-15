@@ -9,10 +9,10 @@ Qn: Return all non-negative integers of length n such that the absolute
     You may return the answer in any order.
 Link: https://leetcode.com/problems/numbers-with-same-consecutive-differences/
 Notes: 
-- iterate through the 0 -> 9
-- attach a digit that is +k, -k if it is a single digit(0 - 9) and 
-- if the original digit is not zero
-- store them in a set to remove duplicates
+    - iterate through the 0 -> 9
+    - attach a digit that is +k, -k if it is a single digit(0 - 9) and 
+    - if the original digit is not zero
+    - store them in a set to remove duplicates
 '''
 def numsSameConsecDiff(n: int, k: int) -> list[int]:
     temp = range(10)

@@ -3,7 +3,7 @@ Qn: Implement the BSTIterator class that represents an iterator over the in-orde
 binary search tree (BST)
 Link: https://leetcode.com/problems/binary-search-tree-iterator/
 Notes:
-- store only left nodes in the stack and append new nodes when calling next() for O(h) space
+    - store only left nodes in the stack and append new nodes when calling next() for O(h) space
 '''
 from typing import Optional
 

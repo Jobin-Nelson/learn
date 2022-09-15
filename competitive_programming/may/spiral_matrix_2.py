@@ -2,7 +2,7 @@
 Qn: Given a positive integer n, generate an n x n matrix filled with elements from 1 to n2 in spiral order.
 Link: https://leetcode.com/problems/spiral-matrix-ii/
 Notes:
-- t, b, l, r variables to get the boundary of matrix at each spiral
+    - t, b, l, r variables to get the boundary of matrix at each spiral
 '''
 import pprint
 

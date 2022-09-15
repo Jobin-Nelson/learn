@@ -6,7 +6,7 @@ Qn: Given the root of a binary search tree and the lowest and highest boundaries
     the trimmed binary search tree. Note that the root may change depending on the given bounds.
 Link: https://leetcode.com/problems/trim-a-binary-search-tree/
 Notes:
-- recursively check if the root.val is out of bounds if it is run the algorithm on the specific child node
+    - recursively check if the root.val is out of bounds if it is run the algorithm on the specific child node
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

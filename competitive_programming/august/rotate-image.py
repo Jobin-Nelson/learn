@@ -6,8 +6,8 @@ Qn: You are given an n x n 2D matrix representing an image, rotate the image by
     and do the rotation. 
 Link: https://leetcode.com/problems/rotate-image/
 Notes:
-- store top left value in a variable and rotate each element of the outer square 
-- recursively rotate inward
+    - store top left value in a variable and rotate each element of the outer square 
+    - recursively rotate inward
 '''
 from pprint import pprint
 

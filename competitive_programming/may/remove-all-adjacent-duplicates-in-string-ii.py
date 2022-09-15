@@ -4,8 +4,8 @@ Qn: We repeatedly make k duplicate removals on s until we no longer can.
     It is guaranteed that the answer is unique.
 Link: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
 Notes:
-- use stack to keep track of char and count
-- pop when the count reaches k, join and return the string 
+    - use stack to keep track of char and count
+    - pop when the count reaches k, join and return the string 
 '''
 from collections import deque
 def removeDuplicates(s: str, k: int) -> str:

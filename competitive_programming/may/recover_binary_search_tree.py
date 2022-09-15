@@ -4,8 +4,8 @@ where the values of exactly two nodes of the tree were swapped by mistake.
 Recover the tree without changing its structure.
 Link: https://leetcode.com/problems/recover-binary-search-tree/
 Notes:
-- check if the current node value is less than previous node value while traversing inorder
-- capture the ones that are not, and swap their values
+    - check if the current node value is less than previous node value while traversing inorder
+    - capture the ones that are not, and swap their values
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

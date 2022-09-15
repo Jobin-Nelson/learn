@@ -2,8 +2,8 @@
 Qn: Return true if and only if it is bipartite.
 Link: https://leetcode.com/problems/is-graph-bipartite/
 Notes:
-- try to assign alternative values like(0,1) for every node
-- if it can be done the graph is bipartite else not
+    - try to assign alternative values like(0,1) for every node
+    - if it can be done the graph is bipartite else not
 '''
 from collections import deque
 

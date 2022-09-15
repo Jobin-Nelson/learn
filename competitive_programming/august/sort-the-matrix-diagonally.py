@@ -10,10 +10,10 @@ Qn: A matrix diagonal is a diagonal line of cells starting from some cell in
     order and return the resulting matrix.
 Link: https://leetcode.com/problems/sort-the-matrix-diagonally/
 Notes:
-- Only thing that's consistent across diagonals are r - c
-- we can use them as keys to store the diagonals in a list
-- and while iterating over the matrix popping off the heap 
-- so that you'll get the min value for that particular diagonal
+    - Only thing that's consistent across diagonals are r - c
+    - we can use them as keys to store the diagonals in a list
+    - and while iterating over the matrix popping off the heap 
+    - so that you'll get the min value for that particular diagonal
 '''
 from collections import defaultdict
 from heapq import heappush, heappop

@@ -11,8 +11,8 @@ Qn: Given the root of a binary tree, determine if it is a valid binary search
         - Both the left and right subtrees must also be binary search trees.
 Link: https://leetcode.com/problems/validate-binary-search-tree/
 Notes:
-- Same level comparison
-- Track two variables left and right and update it with the current value
+    - Same level comparison
+    - Track two variables left and right and update it with the current value
 '''
 from typing import Optional
 

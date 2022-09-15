@@ -7,8 +7,8 @@ Qn: You are given an integer array nums and an integer x. In one operation,
     otherwise, return -1.
 Link: https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
 Notes:
-- hashmap the cumulative sum
-- find if the difference between sum of nums and x is betweent the cumulative sum
+    - hashmap the cumulative sum
+    - find if the difference between sum of nums and x is betweent the cumulative sum
 '''
 def minOperations(nums: list[int], x: int) -> int:
     z, dp = 0, [0]

@@ -3,7 +3,7 @@ Qn: Given the root of a Binary Search Tree (BST), convert it to a Greater Tree s
 of the original BST is changed to the original key plus the sum of all keys greater than the original key in BST.
 Link: https://leetcode.com/problems/convert-bst-to-greater-tree/
 Notes:
-- use a instance variable to track the sum by recursing to the right node then carrying the sum to the left node
+    - use a instance variable to track the sum by recursing to the right node then carrying the sum to the left node
 '''
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

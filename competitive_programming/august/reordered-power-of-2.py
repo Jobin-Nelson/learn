@@ -6,9 +6,9 @@ Qn: You are given an integer n. We reorder the digits in any order (including
     power of two.
 Link: https://leetcode.com/problems/reordered-power-of-2/
 Notes:
-- There are lesser number of power of 2's than going through every permutation
+    - There are lesser number of power of 2's than going through every permutation
   of a given number
-- Check the counter of each 2's power with the given number's counter
+    - Check the counter of each 2's power with the given number's counter
 '''
 from collections import Counter
 

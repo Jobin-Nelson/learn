@@ -6,7 +6,7 @@ Qn: Given an array nums with n integers, your task is to check if it could
     for every i (0-based) such that (0 <= i <= n - 2).
 Link: https://leetcode.com/problems/non-decreasing-array/
 Notes:
-- if order is broken we have two choices
+    - if order is broken we have two choices
     - nums[i] = nums[i+1] # When nums[i-1] <= nums[i+1]
     - nums[i+1] = nums[i] # else
 '''

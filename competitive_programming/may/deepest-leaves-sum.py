@@ -3,7 +3,7 @@ Qn: Given the root of a binary tree,
     return the sum of values of its deepest leaves.
 Link: https://leetcode.com/problems/deepest-leaves-sum/
 Notes:
-- bfs level order traversal and get sum at each level
+    - bfs level order traversal and get sum at each level
 '''
 from typing import Optional
 from collections import deque

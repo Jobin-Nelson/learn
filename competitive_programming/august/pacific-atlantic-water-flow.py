@@ -18,9 +18,9 @@ Qn: There is an m x n rectangular island that borders both the Pacific Ocean
     oceans.
 Link: https://leetcode.com/problems/pacific-atlantic-water-flow/
 Notes:
-- dfs from ocean to the cells using reverse flow condition
-- track cells with 2 sets for pacific and atlantic
-- return common cells in a list
+    - dfs from ocean to the cells using reverse flow condition
+    - track cells with 2 sets for pacific and atlantic
+    - return common cells in a list
 '''
 import pprint
 

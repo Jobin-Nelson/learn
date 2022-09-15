@@ -15,7 +15,7 @@ Qn: Given the root of a binary tree, calculate the vertical order traversal of
     Return the vertical order traversal of the binary tree.
 Link: https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
 Notes:
-- hashmap with keys as columns
+    - hashmap with keys as columns
 '''
 from collections import defaultdict
 from heapq import heappush, heappop

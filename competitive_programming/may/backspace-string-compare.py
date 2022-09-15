@@ -3,8 +3,8 @@ Qn: Given two strings s and t, return true if they are equal when both are typed
 '#' means a backspace character
 Link: https://leetcode.com/problems/backspace-string-compare/
 Notes:
-- use stack to push and pop on #, check both stacks are same
-- two pointer going l <- r, skipping on # and checking 
+    - use stack to push and pop on #, check both stacks are same
+    - two pointer going l <- r, skipping on # and checking 
 '''
 def backspace_compare(s: str, t: str) -> bool:
     ns , nt = [], []

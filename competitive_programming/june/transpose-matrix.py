@@ -5,8 +5,8 @@ Qn: Given a 2D integer array matrix, return the transpose of matrix.
     switching the matrix's row and column indices.
 Link: https://leetcode.com/problems/transpose-matrix/
 Notes:
-- create a new matrix with n x m size
-- reverse row and col indices to tranpose the matrix
+    - create a new matrix with n x m size
+    - reverse row and col indices to tranpose the matrix
 '''
 from pprint import pprint
 

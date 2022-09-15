@@ -9,7 +9,7 @@ Qn: There are several cards arranged in a row, and each card has an associated
     score you can obtain.
 Link: https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
 Notes:
-- sliding window to find the max sum of cards outside the window
+    - sliding window to find the max sum of cards outside the window
 '''
 def maxScore(cardPoints: list[int], k: int) -> int:
     N = len(cardPoints)
