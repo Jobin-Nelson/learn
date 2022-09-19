@@ -44,7 +44,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         else:
             with open(p, 'w') as f:
                 print(f'Creating file {filename} at {p}')
-                f.write(f"'''\nCreated Date: {today.strftime('%d-%m-%Y')}\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
+                f.write(f"'''\nCreated Date: {today.strftime('%Y-%m-%d')}\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
 
     # opening the file in vscode
     if args.vscode:
