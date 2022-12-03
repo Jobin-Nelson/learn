@@ -1,19 +1,27 @@
 #!/usr/bin/env python3
 '''This program sets up everything for the daily leetcode problem'''
-from pathlib import Path
-import requests
-import subprocess, argparse
-from typing import Sequence, Optional
 from datetime import datetime
+from pathlib import Path
+from typing import Sequence, Optional
+import requests
+import subprocess, argparse, sys
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="find today's leetcode problem")
-    parser.add_argument('-f', '--file', action='store_true', help='create a file if not existing')
-    parser.add_argument('-c', '--vscode', action='store_true', help='open file in vscode')
-    parser.add_argument('-v', '--vim', action='store_true', help='open file in neovim')
+    parser.add_argument('-f', '--file', action='store_false', help='do not create a file')
+    parser.add_argument('-v', '--vim', action='store_false', help='do not open file in neovim')
     args = parser.parse_args(argv)
 
-    # api request to get the daily question link
+    daily_qn_link = get_daily_qn_link()
+
+    filepath = create_file(daily_qn_link, args.file)
+
+    if args.vim:
+        subprocess.run(['nvim', str(filepath)])
+
+    return 0
+
+def get_daily_qn_link() -> str:
     base_url = 'https://leetcode.com'
     query_url = base_url + '/graphql'
     query = {
@@ -22,38 +30,32 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     }
 
     r = requests.post(query_url, json=query)
-    if r.ok:
-        response = r.json()
-        daily_qn_link = base_url + response['data']['activeDailyCodingChallengeQuestion']['link']
-        subprocess.run(['brave-browser', daily_qn_link], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    else:
+    if not r.ok:
         print(f'Received response {r.status_code}')
         print('Aborting program!')
-        return 1
+        sys.exit(1)
 
-    filename = Path(daily_qn_link).name + '.py'
+    response = r.json()
+    daily_qn_link = base_url + response['data']['activeDailyCodingChallengeQuestion']['link']
+    # subprocess.run(['brave-browser', daily_qn_link], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return daily_qn_link
+
+def create_file(link: str, can_create: bool) -> Path:
+    filename = Path(link).name + '.py'
     today = datetime.now()
-    p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / today.strftime('%B').lower()
-    p.mkdir(exist_ok=True)
-    p /= filename
+    p = Path.home() / 'playground' / 'learn' / 'competitive_programming' / f'{today:%Y}' / f'{today:%B}'.lower() / filename
+    p.parent.mkdir(exist_ok=True)
 
-    # creating and populating the file if it's not created already
-    if args.file:
-        if p.exists():
-            print('File already exists')
-        else:
-            with open(p, 'w') as f:
-                print(f'Creating file {filename} at {p}')
-                f.write(f"'''\nCreated Date: {today.strftime('%Y-%m-%d')}\nQn:\nLink: {daily_qn_link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
+    if p.exists():
+        print('File already exists')
+        return p
 
-    # opening the file in vscode
-    if args.vscode:
-        subprocess.run(['code', str(p)])
-    
-    # opening file in neovim
-    if args.vim:
-        subprocess.run(['nvim', str(p)])
-    return 0
+    if can_create:
+        with open(p, 'w') as f:
+            print(f'Creating file {filename} at {p}')
+            f.write(f"'''\nCreated Date: {today.strftime('%Y-%m-%d')}\nQn:\nLink: {link}\nNotes:\n'''\ndef main():\n\tpass\n\nif __name__ == '__main__':\n")
+
+    return p
 
 if __name__ == '__main__':
     raise SystemExit(main())
