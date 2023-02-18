@@ -29,8 +29,7 @@ class TreeNode:
         if N == 0: return
 
         def inner(index: int) -> Self | None:
-            if index >= N or arr[index] is None:
-                return None
+            if index >= N or arr[index] is None: return None
             node = cls(arr[index])
             node.left = inner(2 * index + 1)
             node.right = inner(2 * index + 2)
