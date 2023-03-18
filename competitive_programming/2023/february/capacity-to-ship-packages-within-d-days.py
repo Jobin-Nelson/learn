@@ -19,7 +19,7 @@ def shipWithinDays(weights: list[int], days: int) -> int:
         nonlocal weights, days
         days_needed, current_load = 1, 0
         for w in weights:
-            current_load = current_load + w
+            current_load += w
             if current_load > capacity:
                 days_needed += 1
                 current_load = w
