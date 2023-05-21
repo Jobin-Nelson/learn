@@ -2,18 +2,9 @@
 '''This program solves cracks sudoku puzzle for you'''
 
 from pprint import pprint
+import sys
 
-def main():
-    grid = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
-            [6, 0, 0, 1, 9, 5, 0, 0, 0],
-            [0, 9, 8, 0, 0, 0, 0, 6, 0],
-            [8, 0, 0, 0, 6, 0, 0, 0, 3],
-            [4, 0, 0, 8, 0, 3, 0, 0, 1],
-            [7, 0, 0, 0, 2, 0, 0, 0, 6],
-            [0, 6, 0, 0, 0, 0, 2, 8, 0],
-            [0, 0, 0, 4, 1, 9, 0, 0, 5],
-            [0, 0, 0, 0, 8, 0, 0, 7, 9]]
-
+def main(grid: list[list[int]]) -> int:
     solve(grid)
     return 0
 
@@ -29,7 +20,7 @@ def solve(board: list[list[int]]) -> None:
                         board[y][x] = 0
                 return 
     pprint(board)
-    input("More?")
+    if input("More?(Y/n): ") == 'n': sys.exit()
     return
 
 def possible(board: list[list[int]], y: int, x: int, n: int) -> bool:
@@ -47,4 +38,14 @@ def possible(board: list[list[int]], y: int, x: int, n: int) -> bool:
     return True
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    grid = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
+            [6, 0, 0, 1, 9, 5, 0, 0, 0],
+            [0, 9, 8, 0, 0, 0, 0, 6, 0],
+            [8, 0, 0, 0, 6, 0, 0, 0, 3],
+            [4, 0, 0, 8, 0, 3, 0, 0, 1],
+            [7, 0, 0, 0, 2, 0, 0, 0, 6],
+            [0, 6, 0, 0, 0, 0, 2, 8, 0],
+            [0, 0, 0, 4, 1, 9, 0, 0, 5],
+            [0, 0, 0, 0, 8, 0, 0, 7, 9]]
+
+    raise SystemExit(main(grid))
