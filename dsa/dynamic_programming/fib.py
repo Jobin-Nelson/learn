@@ -26,6 +26,13 @@ def fib_memoization(n, memo=None):
     memo[n] = fib_memoization(n-1, memo) + fib_memoization(n-2, memo)
     return memo[n]
 
+def fib_var(n):
+    f1, f2 = 0, 1
+
+    for _ in range(n):
+        f1, f2 = f2, f1 + f2
+    return f1
+
 if __name__ == '__main__':
     print(fib_rec(6))
     print(fib_rec(7))
@@ -38,3 +45,8 @@ if __name__ == '__main__':
     print(fib_memoization(6))
     print(fib_memoization(7))
     print(fib_memoization(8))
+
+    print(fib_var(6))
+    print(fib_var(7))
+    print(fib_var(8))
+
