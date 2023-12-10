@@ -19,8 +19,6 @@ Qn: On a 2D plane, there are n points with integer coordinates points[i] = [xi,
 Link: https://leetcode.com/problems/minimum-time-visiting-all-points/
 Notes:
 """
-from functools import reduce
-
 def minTimeToVisitAllPoints(points: list[list[int]]) -> int:
     res = 0
     for i in range(1, len(points)):
@@ -28,7 +26,6 @@ def minTimeToVisitAllPoints(points: list[list[int]]) -> int:
         x2, y2 = points[i]
         res += max(abs(x2-x1), abs(y2-y1))
     return res
-    # return reduce(lambda a, b: max(abs(a[1]-a[0]), abs(b[1]-b[0])), points)
 
 if __name__ == '__main__':
     p1 = [[1,1],[3,4],[-1,0]]
