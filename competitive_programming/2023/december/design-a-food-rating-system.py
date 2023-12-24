@@ -26,18 +26,62 @@ Qn: Design a food rating system that can do the following:
     in alphabetic order.
 Link: https://leetcode.com/problems/design-a-food-rating-system/
 Notes:
+    - use hashmaps and heaps
 """
+import heapq
+from collections import defaultdict
+from typing import Self
+
+
+class Food:
+    def __init__(self, name: str, rating: int):
+        self.food_name = name
+        self.food_rating = rating
+
+    def __lt__(self, other: Self) -> bool:
+        if self.food_rating == other.food_rating:
+            return self.food_name < other.food_name
+        return self.food_rating > other.food_rating
 
 
 class FoodRatings:
     def __init__(self, foods: list[str], cuisines: list[str], ratings: list[int]):
-        pass
+        self.food_rating = {}
+        self.food_cuisine = {}
+        self.cuisine_food = defaultdict(list)
+        for i in range(len(foods)):
+            self.food_rating[foods[i]] = ratings[i]
+            self.food_cuisine[foods[i]] = cuisines[i]
+            heapq.heappush(self.cuisine_food[cuisines[i]], Food(foods[i], ratings[i]))
 
     def changeRating(self, food: str, newRating: int) -> None:
-        pass
+        cuisine = self.food_cuisine[food]
+        self.food_rating[food] = newRating
+        heapq.heappush(self.cuisine_food[cuisine], Food(food, newRating))
 
-    def highestRated(self, cuisines: str) -> str:
-        pass
+    def highestRated(self, cuisine: str) -> str:
+        highest_rated = self.cuisine_food[cuisine][0]
+        while self.food_rating[highest_rated.food_name] != highest_rated.food_rating:
+            heapq.heappop(self.cuisine_food[cuisine])
+            highest_rated = self.cuisine_food[cuisine][0]
+        return highest_rated.food_name
+
+    # def __init__(self, foods: list[str], cuisines: list[str], ratings: list[int]):
+    #     self.lookup = defaultdict(list)
+    #     self.clookup = {foods[i]: cuisines[i] for i in range(len(foods))}
+    #     for i, cuisine in enumerate(cuisines):
+    #         heapq.heappush(self.lookup[cuisine], (-ratings[i], foods[i]))
+    #
+    # def changeRating(self, food: str, newRating: int) -> None:
+    #     cuisine = self.clookup[food]
+    #     for i, (_, f) in enumerate(self.lookup[cuisine]):
+    #         if f == food:
+    #             self.lookup[cuisine][i] = (-newRating, food)
+    #             heapq.heapify(self.lookup[cuisine])
+    #             break
+    #
+    # def highestRated(self, cuisine: str) -> str:
+    #     return heapq.heappop(self.lookup[cuisine])[1]
 
 
 if __name__ == "__main__":
@@ -48,8 +92,7 @@ if __name__ == "__main__":
     )
     print(f.highestRated("korean"))
     print(f.highestRated("japanese"))
-    print(f.highestRated("sushi"))
-    print(f.changeRating("sushi", 16))
+    f.changeRating("sushi", 16)
     print(f.highestRated("japanese"))
-    print(f.changeRating("ramen", 16))
+    f.changeRating("ramen", 16)
     print(f.highestRated("japanese"))
