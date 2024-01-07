@@ -19,9 +19,20 @@ Qn: Given an integer array nums, return the number of all the arithmetic
     The test cases are generated so that the answer fits in 32-bit integer.
 Link: https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
 Notes:
+    - use dp
 """
+from collections import defaultdict
+
 def numberOfArithmeticSlices(nums: list[int]) -> int:
-    pass
+    res, N = 0, len(nums)
+    dp = [defaultdict(int) for _ in range(N)]
+
+    for i in range(N):
+        for j in range(i):
+            diff = nums[i] - nums[j]
+            dp[i][diff] += 1 + dp[j][diff]
+            res += 1 + dp[j][diff]
+    return res - (N*(N-1) // 2)
 
 if __name__ == '__main__':
     n1 = [2,4,6,8,10]
