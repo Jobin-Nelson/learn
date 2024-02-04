@@ -10,7 +10,7 @@ Qn: Given a matrix and a target, return the number of non-empty submatrices
     they have some coordinate that is different: for example, if x1 != x1'.
 Link: https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/
 Notes:
-    - use 
+    - use prefix sum and hashmap to pre-process sums for easy target calculation
 """
 from collections import defaultdict
 
