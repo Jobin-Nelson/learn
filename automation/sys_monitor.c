@@ -78,11 +78,15 @@ void log_performance(const char *log_file) {
     time(&rawtime);
     if ((timeinfo = localtime(&rawtime)) == NULL) {
       perror("Error getting local time");
+      fclose(fin);
+      fclose(fout);
       exit(errno);
     }
 
     if (sysinfo(&si) < 0) {
       perror("Error obtaining sysinfo");
+      fclose(fin);
+      fclose(fout);
       exit(errno);
     }
     total_memory = si.totalram / (1024 * 1024);
