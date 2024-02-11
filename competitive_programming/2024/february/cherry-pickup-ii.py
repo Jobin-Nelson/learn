@@ -22,9 +22,42 @@ Qn: You are given a rows x cols matrix grid representing a field of cherries
 
 Link: https://leetcode.com/problems/cherry-pickup-ii/
 Notes:
+    - use tabulation or dfs with memoization
 """
+from itertools import product
+
 def cherryPickup(grid: list[list[int]]) -> int:
-    pass
+    R, C = len(grid), len(grid[0])
+    dp = [[0] * C for _ in range(C)]
+
+    for r in range(R-1, -1, -1):
+        cur_dp = [[0] * C for _ in range(C)]
+        for c1 in range(C-1):
+            for c2 in range(c1+1, C):
+                max_cherries = 0
+                cherries = grid[r][c1] + grid[r][c2]
+                for c1d, c2d in product([-1, 0, 1], [-1, 0, 1]):
+                    nc1, nc2 = c1 + c1d, c2 + c2d
+                    if nc1 < 0 or nc2 == C: continue
+                    max_cherries = max(max_cherries, cherries + dp[nc1][nc2])
+                cur_dp[c1][c2] = max_cherries
+        dp = cur_dp
+    return dp[0][C-1]
+
+
+    # memo = {}
+    #
+    # def dfs(r: int, c1: int, c2: int) -> int:
+    #     if (r, c1, c2) in memo: return memo[(r, c1, c2)]
+    #     if c1 == c2 or min(c1, c2) < 0 or max(c1, c2) == C: return 0
+    #     if r == R - 1: return grid[r][c1] + grid[r][c2]
+    #     res = 0
+    #     for c1d in (-1, 0, 1):
+    #         for c2d in (-1, 0, 1):
+    #             res = max(res, dfs(r+1, c1 + c1d, c2 + c2d))
+    #     memo[(r, c1, c2)] = res + grid[r][c1] + grid[r][c2]
+    #     return memo[(r, c1, c2)]
+    # return dfs(0, 0, C-1)
 
 if __name__ == '__main__':
     g1 = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]

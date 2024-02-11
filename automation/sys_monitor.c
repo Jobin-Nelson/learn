@@ -21,8 +21,8 @@
 
 void log_performance(const char *log_file);
 void stat_performance(const char *log_file);
+void backup_file(const char *log_file);
 void sig_handler(int sigtype);
-void bail(const char *statement);
 
 int main(int argc, char *argv[]) {
   if (argc != 3 || (!(strcmp(argv[1], "stat") == 0 || strcmp(argv[1], "log") == 0))) {
@@ -36,6 +36,31 @@ int main(int argc, char *argv[]) {
   }
 
   (strcmp(argv[1], "log") == 0) ? log_performance(argv[2]) : stat_performance(argv[2]);
+}
+
+void backup_file(const char *log_file) {
+  FILE *ofin, *bfin;
+  char backup_file[512];
+  int count = 1;
+
+  if ((ofin = fopen(log_file, "r")) == NULL) {
+    return;
+  }
+  fclose(ofin);
+
+  snprintf(backup_file, sizeof(backup_file), "%s-%d", log_file, count);
+
+  while ((bfin = fopen(backup_file, "r"))!= NULL) {
+    fclose(bfin);
+    snprintf(backup_file, sizeof(backup_file), "%s-%d", log_file, count);
+    count++;
+  }
+  
+  if (rename(log_file, backup_file) < 0) {
+    fprintf(stderr, "Error backing up file %s\n", log_file);
+    exit(errno);
+  }
+  printf("Backed up %s to %s\n", log_file, backup_file);
 }
 
 void log_performance(const char *log_file) {
@@ -55,6 +80,7 @@ void log_performance(const char *log_file) {
 
   char label[] = "INFO";
 
+  backup_file(log_file);
   FILE *fout = fopen(log_file, "w");
   if (!fout) {
     perror("Error opening output file");
@@ -123,10 +149,16 @@ void log_performance(const char *log_file) {
 
 void stat_performance(const char *log_file) {
   FILE *fin = NULL;
-  float cpu_max = 0.0, mem_max = 0.0;
   unsigned long line_count = 1;
-  float cpu = 0.0, mem = 0.0;
+  int cpu_modes[101] = {0}, mem_modes[101] = {0};
+  double cpu_total = 0.0, mem_total = 0.0;
   char line[MAX_LOG_LINE_LENGTH];
+
+  float cpu = 0.0, mem = 0.0;
+  float cpu_max = 0.0, mem_max = 0.0;
+  float cpu_mean = 0.0, mem_mean = 0.0;
+  int cpu_mode = 0, mem_mode = 0;
+
   // [2024-02-07T12:03:49] INFO - CPU: 100.00%, MEM: 100.00%
   
   if ((fin = fopen(log_file, "r")) == NULL) {
@@ -140,14 +172,30 @@ void stat_performance(const char *log_file) {
       fclose(fin);
       exit(EXIT_ERR_UNABLE_TO_PARSE);
     };
+    cpu_total += cpu;
+    mem_total += mem;
+    cpu_modes[(int)cpu]++;
+    mem_modes[(int)mem]++;
+
     if (cpu > cpu_max) cpu_max = cpu;
     if (mem > mem_max) mem_max = mem;
+    if (cpu_modes[(int)cpu] > cpu_mode) cpu_mode = cpu_modes[(int)cpu];
+    if (mem_modes[(int)mem] > mem_mode) mem_mode = mem_modes[(int)mem];
+
     line_count++;
   }
-
-  printf("MAX CPU: %.2f%%\n", cpu_max);
-  printf("MAX MEM: %.2f%%\n", mem_max);
   fclose(fin);
+
+  cpu_mean = cpu_total / (line_count-1);
+  mem_mean = mem_total / (line_count-1);
+
+  printf("MAX  CPU: %.2f%%\n", cpu_max);
+  printf("MEAN CPU: %.2f%%\n", cpu_mean);
+  printf("MODE CPU: %d%%\n\n", cpu_mode);
+
+  printf("MAX  MEM: %.2f%%\n", mem_max);
+  printf("MEAN MEM: %.2f%%\n", mem_mean);
+  printf("MODE MEM: %d%%\n", mem_mode);
 }
 
 void sig_handler(int sigtype) {
