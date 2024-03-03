@@ -13,7 +13,8 @@ Qn: You are given a 0-indexed integer array nums, and you are allowed to
     indices, or false otherwise.
 Link: https://leetcode.com/problems/greatest-common-divisor-traversal/
 Notes:
-    - use union find to find the number of connected edges
+    - use union find to find the number of connected component
+    - return true if there is only one connected component
 """
 class UnionFind:
     def __init__(self, n: int):
