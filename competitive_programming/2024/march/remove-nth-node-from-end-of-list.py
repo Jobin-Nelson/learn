@@ -41,8 +41,7 @@ def removeNthFromEnd(head: ListNode|None, n: int) -> ListNode|None:
         p1 = p1.next
         p2 = p2.next
     p2.next = p2.next.next
-    print(f'{p2.next=} = {p2.next.next=}')
-    return head
+    return dummy.next
 
 if __name__ == '__main__':
     h1, n1 = ListNode.from_list(list(range(1,6))), 2
