@@ -29,49 +29,47 @@ Qn: Given a string formula representing a chemical formula, return the count of
     32-bit integer.
 Link: https://leetcode.com/problems/number-of-atoms/
 Notes:
+    - use parsing technique
 """
-class Solution
+from collections import defaultdict
+
+class Solution:
     def countAtoms(self, formula: str) -> str:
-        stack = []
-        self.count = {}
-        self.index = 1
+        self.index = 0
         def next_number() -> int:
+            count = 1
             start = self.index
             while self.index < len(formula) and formula[self.index].isdigit():
                 self.index += 1
-            return int(formula[start:self.index])
+            if formula[start:self.index]:
+                count = int(formula[start:self.index])
+            return count
         def next_element() -> str:
             start = self.index
-            while self.index < len(formula) and formula[self.index].isalpha():
+            self.index += 1
+            while self.index < len(formula) and formula[self.index].islower():
                 self.index += 1
             return formula[start:self.index]
-        def next_token() -> dict[str, int]:
-            count = {}
-            if formula[self.index].isupper():
-                element = next_element()
-                if formula[self.index].isdigit():
-                    count[element] = int
 
-        def dfs(l: int) -> dict[str,int]:
-            sub_formula = formula[l:self.index]
-            count= {}
-            while self.index < len(sub_formula):
-                if sub_formula[self.index].isupper():
-                    
-                elif sub_formula[self.index].isdigit():
-                    m = self.index
-                    while self.index < len(sub_formula) and sub_formula[self.index].isdigit():
-                        self.index += 1
-                    count[sub_formula[l:m]] = int(sub_formula[m:self.index])
-                elif sub_formula[self.index] == ')':
-                    if stack:
-                        start = stack.pop()
-                        c = dfs(start)
-                        for k, v in c.items():
-                            count[k] += v * 
-                elif sub_formula[self.index] == '(':
-                    stack.append(self.index)
-                self.index += 1
+        stack = [defaultdict(int)]
+        while self.index < len(formula):
+            while self.index < len(formula):
+                if formula[self.index] == '(':
+                    self.index += 1
+                    stack.append(defaultdict(int))
+                elif formula[self.index] == ')':
+                    self.index += 1
+                    cur_map = stack.pop()
+                    prev_map = stack[-1]
+                    count = next_number()
+                    for k, v in cur_map.items():
+                        prev_map[k] += v * count
+                else:
+                    element = next_element()
+                    count = next_number()
+                    cur_map = stack[-1]
+                    cur_map[element] += count
+        return ''.join(f'{k}{v}' if v > 1 else k for k, v in sorted(stack[-1].items(), key=lambda x: x[0]))
 
 if __name__ == '__main__':
     f1 = "H2O"
