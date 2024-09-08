@@ -14,8 +14,13 @@ Qn: You are given a 0-indexed 1-dimensional (1D) integer array original, and
 Link: https://leetcode.com/problems/convert-1d-array-into-2d-array/
 Notes:
 """
+
+
 def construct2DArray(original: list[int], m: int, n: int) -> list[list[int]]:
-    if len(original) != m * n: return []
+    if len(original) != m * n:
+        return []
+    return [[original[(r * n) + c] for c in range(n)] for r in range(m)]
+
 
 if __name__ == '__main__':
     o1, m1, n1 = list(range(1, 5)), 2, 2
@@ -25,4 +30,3 @@ if __name__ == '__main__':
     print(construct2DArray(o1, m1, n1))
     print(construct2DArray(o2, m2, n2))
     print(construct2DArray(o3, m3, n3))
-
