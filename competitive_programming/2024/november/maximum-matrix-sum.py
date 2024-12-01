@@ -18,6 +18,7 @@ Notes:
 
 import unittest
 from sys import maxsize
+from functools import reduce, partial
 
 
 class Solution:
@@ -25,7 +26,20 @@ class Solution:
         # functional approach
         def calc(x: tuple[int, int, int], y: int) -> tuple[int, int, int]:
             cur_sum, min_num, neg_count = x
-            return (cur_sum + y, min(min_num, y), neg_count + 1 if y < 0 else neg_count)
+            return (
+                cur_sum + abs(y),
+                min(min_num, abs(y)),
+                neg_count + 1 if y < 0 else neg_count,
+            )
+
+        # def calc_list(x: tuple[int, int, int], y: list[int]) -> tuple[int, int, int]:
+        #     return reduce(calc, y, x)
+        def c(f):
+            return lambda x, y: f(y, x)
+
+        rc = c(partial(reduce, calc))
+        cur_sum, min_num, neg_count = reduce(rc, matrix, (0, maxsize, 0))
+        return cur_sum - (2 * min_num) if neg_count & 1 else cur_sum
 
         # Imperative approach
         # cur_sum = 0
