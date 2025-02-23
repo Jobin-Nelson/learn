@@ -20,22 +20,59 @@ Qn: Given an integer n, find a sequence that satisfies all of the following:
     differ is at the third number, and 9 is greater than 5.
 Link: https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/
 Notes:
+    - use backtracking
 """
 
 import unittest
 
 
 class Solution:
-    def main(self):
-        pass
+    def constructDistancedSequence(self, n: int) -> list[int]:
+        res = [0] * (2 * n - 1)
+        used = set()
+
+        def backtrack(i: int) -> bool:
+            if i == len(res):
+                return True
+            for num in range(n, 0, -1):
+                if num in used or (num > 1 and (i + num >= len(res) or res[i + num])):
+                    continue
+
+                used.add(num)
+                res[i] = num
+                if num > 1:
+                    res[i + num] = num
+
+                j = i + 1
+                while j < len(res) and res[j]:
+                    j += 1
+
+                if backtrack(j):
+                    return True
+
+                used.remove(num)
+                res[i] = 0
+                if num > 1:
+                    res[i + num] = 0
+            return False
+
+        backtrack(0)
+        return res
 
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
         self.sol = Solution()
 
-    def test_main(self):
-        pass
+    def test_constructDistancedSequence1(self):
+        n = 3
+        expected = [3, 1, 2, 3, 2]
+        self.assertEqual(expected, self.sol.constructDistancedSequence(n))
+
+    def test_constructDistancedSequence2(self):
+        n = 5
+        expected = [5, 3, 1, 4, 3, 5, 2, 4, 2]
+        self.assertEqual(expected, self.sol.constructDistancedSequence(n))
 
 
 if __name__ == '__main__':
