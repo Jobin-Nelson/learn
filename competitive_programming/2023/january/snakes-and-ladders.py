@@ -7,13 +7,13 @@ Qn: You are given an n x n integer matrix board where the cells are labeled
     You start on square 1 of the board. In each move, starting from square
     curr, do the following:
 
-    - Choose a destination square next with a label in the range [curr + 1, 
+    - Choose a destination square next with a label in the range [curr + 1,
     min(curr + 6, n2)]. This choice simulates the result of a standard 6-sided die
     roll: i.e., there are always at most 6 destinations, regardless of the size of
-    the board. 
+    the board.
     - If next has a snake or ladder, you must move to the destination of
-    that snake or ladder. Otherwise, you move to next. 
-    - The game ends when you reach the square n² 
+    that snake or ladder. Otherwise, you move to next.
+    - The game ends when you reach the square n²
 
     A board square on row r and column c has a snake or ladder if board[r][c]
     != -1. The destination of that snake or ladder is board[r][c]. Squares 1
@@ -34,7 +34,9 @@ Notes:
     - edges are 1-6 representing the numbers on dice and add more for ladders
       and snakes
 '''
+
 from collections import deque
+
 
 def snakesAndLadders(board: list[list[int]]) -> int:
     N = len(board)
@@ -42,7 +44,7 @@ def snakesAndLadders(board: list[list[int]]) -> int:
     label = 1
     columns = list(range(N))
 
-    for row in range(N-1, -1, -1):
+    for row in range(N - 1, -1, -1):
         for col in columns:
             cells[label] = (row, col)
             label += 1
@@ -53,17 +55,25 @@ def snakesAndLadders(board: list[list[int]]) -> int:
     res[1] = 0
     while q:
         cur = q.popleft()
-        for i in range(cur+1, min(cur+6, N**2) + 1):
+        for i in range(cur + 1, min(cur + 6, N**2) + 1):
             row, col = cells[i]
             destination = board[row][col] if board[row][col] != -1 else i
             if res[destination] == -1:
                 res[destination] = res[cur] + 1
                 q.append(destination)
-    return res[N*N]
+    return res[N * N]
+
 
 if __name__ == '__main__':
-    b1 = [[-1,-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1,-1],[-1,35,-1,-1,13,-1],[-1,-1,-1,-1,-1,-1],[-1,15,-1,-1,-1,-1]]
-    b2 = [[-1,-1],[-1,3]]
+    b1 = [
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, 35, -1, -1, 13, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, 15, -1, -1, -1, -1],
+    ]
+    b2 = [[-1, -1], [-1, 3]]
 
     print(snakesAndLadders(b1))
     print(snakesAndLadders(b2))

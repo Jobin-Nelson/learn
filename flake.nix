@@ -13,8 +13,9 @@
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         pyright
-        python3
+        uv
         ruff
+        python313Packages.debugpy
       ];
     };
   };
