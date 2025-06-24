@@ -12,14 +12,21 @@ Qn: You are given a string word and an integer k.
     k-special.
 Link: https://leetcode.com/problems/minimum-deletions-to-make-string-k-special/
 Notes:
+    - iterate through each element and clip between the value and value + k
 """
 
 import unittest
+from collections import Counter
 
 
 class Solution:
     def minimumDeletions(self, word: str, k: int) -> int:
-        pass
+        freq = Counter(word)
+        return min((
+            sum(b if a > b else b - (a + k) if b > a + k else 0 for b in freq.values())
+            for a in freq.values()),
+            default=len(word),
+        )
 
 
 class TestSolution(unittest.TestCase):
